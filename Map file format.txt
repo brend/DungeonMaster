@@ -1,0 +1,33 @@
+<image file name>
+<width, height>
+<linear room index of starting position>
+<Line 1>
+<Line 2>
+...
+
+Each line describing a room's exits and possibly warp like this:
+
+<linear room index> <entrance> = <reachable exits>
+Be careful to put exactly one space between each item (no tabs or other, no leading spaces).
+The linear room index is an integer between 0 and map width * map height, exclusively. The <entrance> must be one of the following: north, south, west, east.
+The reachable exits are either empty or a combination of n, s, w, e (for north, south, east, west).
+A sample line would look like
+
+39 north = nsw
+
+meaning: "From the northern entrance, you can reach the exits to the north, south and west."
+
+You need only describe existing connections; lines of the form
+
+7 west = 
+
+may be left out.
+
+Teleport lines are of the format
+<linear room index> teleport = <teleport entrance> <linear room index of target room> <teleport exit>
+e.g.
+62 teleport = n 12 w
+
+Meaning: "The teleport of room 62 can be entered by all entrances accessible from the north entrance (including, of course, the north entrance).
+It will take you to the western exit of room 12 (of course, the western exit won't be used immediately; it merely determines which exits you can now
+use to leave room 12)."
