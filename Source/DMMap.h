@@ -30,6 +30,7 @@
 - (int) height;
 - (DMRoom) preferredStartRoom;
 - (DMRoom) roomWithIndex: (int) i;
+- (int) indexOfRoom: (DMRoom) room;
 
 - (NSString *) image;
 

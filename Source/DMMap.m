@@ -175,6 +175,11 @@
 	return DMMakeRoom(i % width, i / width);
 }
 
+- (int) indexOfRoom:(DMRoom)room
+{
+	return room.x + room.y * width;
+}
+
 - (NSString *) image
 {
 	return image;

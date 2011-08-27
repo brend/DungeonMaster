@@ -10,6 +10,8 @@
 
 @implementation DKDocument
 
+@synthesize map;
+
 - (id)init
 {
     self = [super init];

@@ -7,8 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DMMap.h"
 
-@interface DKDocument : NSDocument {
+@interface DKDocument : NSDocument 
+{
+	DMMap *map;
 }
+
+@property (retain) DMMap *map;
 
 @end
