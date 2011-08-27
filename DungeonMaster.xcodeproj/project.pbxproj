@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F0924C513F9CC450053808D /* DMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0924C413F9CC450053808D /* DMApplicationDelegate.m */; };
 		5F162D4B1408F82D008869BB /* DungeonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F162D4A1408F82D008869BB /* DungeonMaster.icns */; };
+		5F162D5A1408F9BE008869BB /* DMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */; };
+		5F162D5C1408F9BE008869BB /* DMMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D511408F9BE008869BB /* DMMap.m */; };
+		5F162D5D1408F9BE008869BB /* DMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D531408F9BE008869BB /* DMModel.m */; };
+		5F162D5E1408F9BE008869BB /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
+		5F162D5F1408F9BE008869BB /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D571408F9BE008869BB /* DMSearch.m */; };
+		5F162D601408F9BE008869BB /* DungeonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D591408F9BE008869BB /* DungeonView.m */; };
+		5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
-		5F5D7ED60B9378FB0037F447 /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D7ED50B9378FB0037F447 /* DMDefinitions.m */; };
-		5F8BAF780B94C38C00AD2809 /* DMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8BAF770B94C38C00AD2809 /* DMModel.m */; };
-		5FE97DFF0B90D04E000E5D5A /* DungeonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE97DFE0B90D04E000E5D5A /* DungeonView.m */; };
-		5FE97E0D0B90D361000E5D5A /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE97E0C0B90D361000E5D5A /* DMNode.m */; };
-		5FE97E750B90DAF8000E5D5A /* DMMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE97E740B90DAF8000E5D5A /* DMMap.m */; };
-		5FE97EC30B90E466000E5D5A /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE97EC20B90E466000E5D5A /* DMSearch.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -26,23 +26,23 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* DungeonMaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonMaster_Prefix.pch; sourceTree = "<group>"; };
-		5F0924C413F9CC450053808D /* DMApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplicationDelegate.m; sourceTree = "<group>"; };
-		5F0924C613F9CC860053808D /* DMApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplicationDelegate.h; sourceTree = "<group>"; };
 		5F162D4A1408F82D008869BB /* DungeonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DungeonMaster.icns; sourceTree = "<group>"; };
+		5F162D4D1408F9BE008869BB /* DMApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMApplicationDelegate.h; path = Source/DMApplicationDelegate.h; sourceTree = "<group>"; };
+		5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMApplicationDelegate.m; path = Source/DMApplicationDelegate.m; sourceTree = "<group>"; };
+		5F162D501408F9BE008869BB /* DMMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMap.h; path = Source/DMMap.h; sourceTree = "<group>"; };
+		5F162D511408F9BE008869BB /* DMMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMap.m; path = Source/DMMap.m; sourceTree = "<group>"; };
+		5F162D521408F9BE008869BB /* DMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMModel.h; path = Source/DMModel.h; sourceTree = "<group>"; };
+		5F162D531408F9BE008869BB /* DMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMModel.m; path = Source/DMModel.m; sourceTree = "<group>"; };
+		5F162D541408F9BE008869BB /* DMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMNode.h; path = Source/DMNode.h; sourceTree = "<group>"; };
+		5F162D551408F9BE008869BB /* DMNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMNode.m; path = Source/DMNode.m; sourceTree = "<group>"; };
+		5F162D561408F9BE008869BB /* DMSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMSearch.h; path = Source/DMSearch.h; sourceTree = "<group>"; };
+		5F162D571408F9BE008869BB /* DMSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMSearch.m; path = Source/DMSearch.m; sourceTree = "<group>"; };
+		5F162D581408F9BE008869BB /* DungeonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DungeonView.h; path = Source/DungeonView.h; sourceTree = "<group>"; };
+		5F162D591408F9BE008869BB /* DungeonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DungeonView.m; path = Source/DungeonView.m; sourceTree = "<group>"; };
+		5F162D611408F9CE008869BB /* DMDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMDefinitions.h; path = Source/DMDefinitions.h; sourceTree = "<group>"; };
+		5F162D621408F9CE008869BB /* DMDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMDefinitions.m; path = Source/DMDefinitions.m; sourceTree = "<group>"; };
 		5F1A430313FD632B0027508F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		5F5D7ED50B9378FB0037F447 /* DMDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDefinitions.m; sourceTree = "<group>"; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
-		5F8BAF760B94C38C00AD2809 /* DMModel.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DMModel.h; sourceTree = "<group>"; };
-		5F8BAF770B94C38C00AD2809 /* DMModel.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DMModel.m; sourceTree = "<group>"; };
-		5FE97DFD0B90D04E000E5D5A /* DungeonView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DungeonView.h; sourceTree = "<group>"; };
-		5FE97DFE0B90D04E000E5D5A /* DungeonView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DungeonView.m; sourceTree = "<group>"; };
-		5FE97E0B0B90D361000E5D5A /* DMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNode.h; sourceTree = "<group>"; };
-		5FE97E0C0B90D361000E5D5A /* DMNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNode.m; sourceTree = "<group>"; };
-		5FE97E570B90D8D6000E5D5A /* DMDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDefinitions.h; sourceTree = "<group>"; };
-		5FE97E730B90DAF8000E5D5A /* DMMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMap.h; sourceTree = "<group>"; };
-		5FE97E740B90DAF8000E5D5A /* DMMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMap.m; sourceTree = "<group>"; };
-		5FE97EC10B90E466000E5D5A /* DMSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearch.h; sourceTree = "<group>"; };
-		5FE97EC20B90E466000E5D5A /* DMSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearch.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* DungeonMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DungeonMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,18 +62,18 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F8BAF760B94C38C00AD2809 /* DMModel.h */,
-				5F8BAF770B94C38C00AD2809 /* DMModel.m */,
-				5FE97DFD0B90D04E000E5D5A /* DungeonView.h */,
-				5FE97DFE0B90D04E000E5D5A /* DungeonView.m */,
-				5FE97E0B0B90D361000E5D5A /* DMNode.h */,
-				5FE97E0C0B90D361000E5D5A /* DMNode.m */,
-				5FE97E730B90DAF8000E5D5A /* DMMap.h */,
-				5FE97E740B90DAF8000E5D5A /* DMMap.m */,
-				5FE97EC10B90E466000E5D5A /* DMSearch.h */,
-				5FE97EC20B90E466000E5D5A /* DMSearch.m */,
-				5F0924C613F9CC860053808D /* DMApplicationDelegate.h */,
-				5F0924C413F9CC450053808D /* DMApplicationDelegate.m */,
+				5F162D4D1408F9BE008869BB /* DMApplicationDelegate.h */,
+				5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */,
+				5F162D501408F9BE008869BB /* DMMap.h */,
+				5F162D511408F9BE008869BB /* DMMap.m */,
+				5F162D521408F9BE008869BB /* DMModel.h */,
+				5F162D531408F9BE008869BB /* DMModel.m */,
+				5F162D541408F9BE008869BB /* DMNode.h */,
+				5F162D551408F9BE008869BB /* DMNode.m */,
+				5F162D561408F9BE008869BB /* DMSearch.h */,
+				5F162D571408F9BE008869BB /* DMSearch.m */,
+				5F162D581408F9BE008869BB /* DungeonView.h */,
+				5F162D591408F9BE008869BB /* DungeonView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -117,8 +117,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5FE97E570B90D8D6000E5D5A /* DMDefinitions.h */,
-				5F5D7ED50B9378FB0037F447 /* DMDefinitions.m */,
+				5F162D611408F9CE008869BB /* DMDefinitions.h */,
+				5F162D621408F9CE008869BB /* DMDefinitions.m */,
 				32CA4F630368D1EE00C91783 /* DungeonMaster_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -217,13 +217,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				5FE97DFF0B90D04E000E5D5A /* DungeonView.m in Sources */,
-				5FE97E0D0B90D361000E5D5A /* DMNode.m in Sources */,
-				5FE97E750B90DAF8000E5D5A /* DMMap.m in Sources */,
-				5FE97EC30B90E466000E5D5A /* DMSearch.m in Sources */,
-				5F5D7ED60B9378FB0037F447 /* DMDefinitions.m in Sources */,
-				5F8BAF780B94C38C00AD2809 /* DMModel.m in Sources */,
-				5F0924C513F9CC450053808D /* DMApplicationDelegate.m in Sources */,
+				5F162D5A1408F9BE008869BB /* DMApplicationDelegate.m in Sources */,
+				5F162D5C1408F9BE008869BB /* DMMap.m in Sources */,
+				5F162D5D1408F9BE008869BB /* DMModel.m in Sources */,
+				5F162D5E1408F9BE008869BB /* DMNode.m in Sources */,
+				5F162D5F1408F9BE008869BB /* DMSearch.m in Sources */,
+				5F162D601408F9BE008869BB /* DungeonView.m in Sources */,
+				5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
