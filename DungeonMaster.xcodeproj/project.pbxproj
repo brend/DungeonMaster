@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F0924C513F9CC450053808D /* DMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0924C413F9CC450053808D /* DMApplicationDelegate.m */; };
+		5F162D4B1408F82D008869BB /* DungeonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F162D4A1408F82D008869BB /* DungeonMaster.icns */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
 		5F5D7ED60B9378FB0037F447 /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5D7ED50B9378FB0037F447 /* DMDefinitions.m */; };
 		5F8BAF780B94C38C00AD2809 /* DMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8BAF770B94C38C00AD2809 /* DMModel.m */; };
@@ -27,6 +28,7 @@
 		32CA4F630368D1EE00C91783 /* DungeonMaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonMaster_Prefix.pch; sourceTree = "<group>"; };
 		5F0924C413F9CC450053808D /* DMApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplicationDelegate.m; sourceTree = "<group>"; };
 		5F0924C613F9CC860053808D /* DMApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplicationDelegate.h; sourceTree = "<group>"; };
+		5F162D4A1408F82D008869BB /* DungeonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DungeonMaster.icns; sourceTree = "<group>"; };
 		5F1A430313FD632B0027508F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5F5D7ED50B9378FB0037F447 /* DMDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDefinitions.m; sourceTree = "<group>"; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F162D4A1408F82D008869BB /* DungeonMaster.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -202,6 +205,7 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				5F162D4B1408F82D008869BB /* DungeonMaster.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
