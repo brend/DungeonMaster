@@ -16,6 +16,18 @@
 		5F162D601408F9BE008869BB /* DungeonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D591408F9BE008869BB /* DungeonView.m */; };
 		5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F162D651408FA7F008869BB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F162D641408FA7F008869BB /* README.txt */; };
+		5F162DE6140900AD008869BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F162DE5140900AD008869BB /* Cocoa.framework */; };
+		5F162DEF140900AD008869BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F162DED140900AD008869BB /* InfoPlist.strings */; };
+		5F162DF1140900AD008869BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162DF0140900AD008869BB /* main.m */; };
+		5F162DF5140900AE008869BB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5F162DF3140900AE008869BB /* Credits.rtf */; };
+		5F162DF8140900AE008869BB /* DKDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162DF7140900AE008869BB /* DKDocument.m */; };
+		5F162DFB140900AE008869BB /* DKDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F162DF9140900AE008869BB /* DKDocument.xib */; };
+		5F162DFE140900AE008869BB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F162DFC140900AE008869BB /* MainMenu.xib */; };
+		5F162E06140901E1008869BB /* DKMapEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162E05140901E1008869BB /* DKMapEditor.m */; };
+		5F162E0814090501008869BB /* DMMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D511408F9BE008869BB /* DMMap.m */; };
+		5F162E0914090511008869BB /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
+		5F162E0A14090511008869BB /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D571408F9BE008869BB /* DMSearch.m */; };
+		5F162E0B14090541008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -43,6 +55,22 @@
 		5F162D611408F9CE008869BB /* DMDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMDefinitions.h; path = Source/DMDefinitions.h; sourceTree = "<group>"; };
 		5F162D621408F9CE008869BB /* DMDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMDefinitions.m; path = Source/DMDefinitions.m; sourceTree = "<group>"; };
 		5F162D641408FA7F008869BB /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		5F162DE3140900AD008869BB /* DungeonKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DungeonKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F162DE5140900AD008869BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5F162DE7140900AD008869BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5F162DE8140900AD008869BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5F162DE9140900AD008869BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5F162DEC140900AD008869BB /* DungeonKeeper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DungeonKeeper-Info.plist"; sourceTree = "<group>"; };
+		5F162DEE140900AD008869BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5F162DF0140900AD008869BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F162DF2140900AD008869BB /* DungeonKeeper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DungeonKeeper-Prefix.pch"; sourceTree = "<group>"; };
+		5F162DF4140900AE008869BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5F162DF7140900AE008869BB /* DKDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKDocument.m; sourceTree = "<group>"; };
+		5F162DFA140900AE008869BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKDocument.xib; sourceTree = "<group>"; };
+		5F162DFD140900AE008869BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5F162E0314090100008869BB /* DKDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDocument.h; sourceTree = "<group>"; };
+		5F162E04140901E1008869BB /* DKMapEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMapEditor.h; sourceTree = "<group>"; };
+		5F162E05140901E1008869BB /* DKMapEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMapEditor.m; sourceTree = "<group>"; };
 		5F1A430313FD632B0027508F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +78,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F162DE0140900AD008869BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F162DE6140900AD008869BB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +127,9 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F162DE7140900AD008869BB /* AppKit.framework */,
+				5F162DE8140900AD008869BB /* CoreData.framework */,
+				5F162DE9140900AD008869BB /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -99,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* DungeonMaster.app */,
+				5F162DE3140900AD008869BB /* DungeonKeeper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +150,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				5F67805B0B96D9B000BD4E8D /* Notes */,
+				5F162DEA140900AD008869BB /* DungeonKeeper */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -143,9 +184,44 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				5F162DE5140900AD008869BB /* Cocoa.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F162DEA140900AD008869BB /* DungeonKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				5F162E07140901EC008869BB /* Classes */,
+				5F162DF9140900AE008869BB /* DKDocument.xib */,
+				5F162DFC140900AE008869BB /* MainMenu.xib */,
+				5F162DEB140900AD008869BB /* Supporting Files */,
+			);
+			path = DungeonKeeper;
+			sourceTree = "<group>";
+		};
+		5F162DEB140900AD008869BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F162DEC140900AD008869BB /* DungeonKeeper-Info.plist */,
+				5F162DED140900AD008869BB /* InfoPlist.strings */,
+				5F162DF0140900AD008869BB /* main.m */,
+				5F162DF2140900AD008869BB /* DungeonKeeper-Prefix.pch */,
+				5F162DF3140900AE008869BB /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F162E07140901EC008869BB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F162E0314090100008869BB /* DKDocument.h */,
+				5F162DF7140900AE008869BB /* DKDocument.m */,
+				5F162E04140901E1008869BB /* DKMapEditor.h */,
+				5F162E05140901E1008869BB /* DKMapEditor.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		5F67805B0B96D9B000BD4E8D /* Notes */ = {
@@ -159,6 +235,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5F162DE2140900AD008869BB /* DungeonKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F162E01140900AE008869BB /* Build configuration list for PBXNativeTarget "DungeonKeeper" */;
+			buildPhases = (
+				5F162DDF140900AD008869BB /* Sources */,
+				5F162DE0140900AD008869BB /* Frameworks */,
+				5F162DE1140900AD008869BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DungeonKeeper;
+			productName = DungeonKeeper;
+			productReference = 5F162DE3140900AD008869BB /* DungeonKeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D1107260486CEB800E47090 /* DungeonMaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "DungeonMaster" */;
@@ -197,11 +290,23 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* DungeonMaster */,
+				5F162DE2140900AD008869BB /* DungeonKeeper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F162DE1140900AD008869BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F162DEF140900AD008869BB /* InfoPlist.strings in Resources */,
+				5F162DF5140900AE008869BB /* Credits.rtf in Resources */,
+				5F162DFB140900AE008869BB /* DKDocument.xib in Resources */,
+				5F162DFE140900AE008869BB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D1107290486CEB800E47090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +321,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F162DDF140900AD008869BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F162DF1140900AD008869BB /* main.m in Sources */,
+				5F162DF8140900AE008869BB /* DKDocument.m in Sources */,
+				5F162E06140901E1008869BB /* DKMapEditor.m in Sources */,
+				5F162E0814090501008869BB /* DMMap.m in Sources */,
+				5F162E0914090511008869BB /* DMNode.m in Sources */,
+				5F162E0A14090511008869BB /* DMSearch.m in Sources */,
+				5F162E0B14090541008869BB /* DMDefinitions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,9 +369,100 @@
 			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
+		5F162DED140900AD008869BB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F162DEE140900AD008869BB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5F162DF3140900AE008869BB /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F162DF4140900AE008869BB /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5F162DF9140900AE008869BB /* DKDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F162DFA140900AE008869BB /* en */,
+			);
+			name = DKDocument.xib;
+			sourceTree = "<group>";
+		};
+		5F162DFC140900AE008869BB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F162DFD140900AE008869BB /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5F162DFF140900AE008869BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DungeonKeeper/DungeonKeeper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "DungeonKeeper/DungeonKeeper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5F162E00140900AE008869BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DungeonKeeper/DungeonKeeper-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "DungeonKeeper/DungeonKeeper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -308,6 +518,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F162E01140900AE008869BB /* Build configuration list for PBXNativeTarget "DungeonKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F162DFF140900AE008869BB /* Debug */,
+				5F162E00140900AE008869BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "DungeonMaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

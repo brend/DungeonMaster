@@ -3,7 +3,7 @@
 //  DungeonMaster
 //
 //  Created by Philipp Brendel on 24.02.07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 BrendCorp. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
