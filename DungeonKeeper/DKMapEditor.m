@@ -143,6 +143,11 @@
 #pragma mark -
 #pragma mark User Interface Events
 
+- (BOOL) acceptsFirstResponder
+{
+	return YES;
+}
+
 - (void) mouseDown: (NSEvent *) e
 {
 	NSPoint p = [self convertPoint: [e locationInWindow] fromView: nil];
@@ -150,6 +155,32 @@
 	int x = floor(p.x / caretSize.width), y = floor(p.y / caretSize.height);
 	
 	[delegate mapEditor: self selectRoom: NSMakePoint(x, y)];
+}
+
+- (void)keyDown:(NSEvent *)event
+{
+	NSPoint roomCoordinates = self.selectedRoom;
+	
+	switch ([event keyCode]) {
+		case kVK_LeftArrow:
+			if (roomCoordinates.x > 0)
+				roomCoordinates.x -= 1;
+			break;
+		case kVK_RightArrow:
+			if (roomCoordinates.x + 1 < self.mapWidth)
+				roomCoordinates.x += 1;
+			break;
+		case kVK_UpArrow:
+			if (roomCoordinates.y + 1 < self.mapHeight)
+				roomCoordinates.y += 1;
+			break;
+		case kVK_DownArrow:
+			if (roomCoordinates.y > 0)
+				roomCoordinates.y -= 1;
+			break;
+	}
+	
+	[delegate mapEditor: self selectRoom: roomCoordinates];
 }
 
 @end

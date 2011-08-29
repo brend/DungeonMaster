@@ -40,6 +40,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* DungeonMaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonMaster_Prefix.pch; sourceTree = "<group>"; };
+		5F0690CF140C2782007BCE3C /* KeyCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyCode.h; sourceTree = "<group>"; };
 		5F162D4A1408F82D008869BB /* DungeonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DungeonMaster.icns; sourceTree = "<group>"; };
 		5F162D4D1408F9BE008869BB /* DMApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMApplicationDelegate.h; path = Source/DMApplicationDelegate.h; sourceTree = "<group>"; };
 		5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMApplicationDelegate.m; path = Source/DMApplicationDelegate.m; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 				5F162DED140900AD008869BB /* InfoPlist.strings */,
 				5F162DF0140900AD008869BB /* main.m */,
 				5F162DF2140900AD008869BB /* DungeonKeeper-Prefix.pch */,
+				5F0690CF140C2782007BCE3C /* KeyCode.h */,
 				5F162DF3140900AE008869BB /* Credits.rtf */,
 			);
 			name = "Supporting Files";
