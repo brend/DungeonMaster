@@ -31,6 +31,7 @@
 
 @property (retain) NSImage *background;
 @property (readonly) NSSize caretSize;
+- (NSRect) rectForRoom: (NSPoint) roomCoordinates;
 @property (readonly) int mapWidth, mapHeight;
 
 @property (assign) NSPoint selectedRoom;

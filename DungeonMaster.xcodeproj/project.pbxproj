@@ -193,12 +193,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F0690CC140C23B9007BCE3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F162DF9140900AE008869BB /* DKDocument.xib */,
+				5F162DFC140900AE008869BB /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5F162DEA140900AD008869BB /* DungeonKeeper */ = {
 			isa = PBXGroup;
 			children = (
 				5F162E07140901EC008869BB /* Classes */,
-				5F162DF9140900AE008869BB /* DKDocument.xib */,
-				5F162DFC140900AE008869BB /* MainMenu.xib */,
+				5F0690CC140C23B9007BCE3C /* Resources */,
 				5F162DEB140900AD008869BB /* Supporting Files */,
 			);
 			path = DungeonKeeper;

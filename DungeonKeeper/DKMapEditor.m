@@ -10,8 +10,6 @@
 
 @implementation DKMapEditor
 
-@synthesize selectedRoom;
-
 #pragma mark -
 #pragma mark Initialization and Deallocation
 
@@ -34,6 +32,22 @@
 }
 
 #pragma mark -
+#pragma mark Room Selection
+
+- (NSPoint) selectedRoom
+{
+	return selectedRoom;
+}
+
+- (void) setSelectedRoom:(NSPoint)roomCoordinates
+{
+	[self willChangeValueForKey: @"selectedRoom"];
+	selectedRoom = roomCoordinates;
+	[self didChangeValueForKey: @"selectedRoom"];
+	[self setNeedsDisplay: YES];
+}
+
+#pragma mark -
 #pragma mark Drawing the View
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -41,9 +55,14 @@
 	[[NSColor lightGrayColor] setFill];
 	NSRectFill(dirtyRect);
 	
+	// Draw the background image
 	[background drawAtPoint: NSZeroPoint 
 				   fromRect: (NSRect) { .origin = NSZeroPoint, .size = background.size }
 				  operation: NSCompositeSourceOver fraction: 1.0];
+	
+	// Highlight the selected room
+	[[NSColor blueColor] setFill];
+	NSRectFill([self rectForRoom: self.selectedRoom]);
 }
 
 - (NSImage *) background
@@ -56,6 +75,7 @@
 	[self willChangeValueForKey: @"background"];
 	[background autorelease];
 	background = [anImage retain];
+	self.frame = NSUnionRect(self.frame, (NSRect) { .origin = NSZeroPoint, .size = background.size });
 	[self didChangeValueForKey: @"background"];
 	[self setNeedsDisplay: YES];
 }
@@ -76,6 +96,13 @@
 - (int) mapHeight
 {
 	return dataSource.mapHeight;
+}
+
+- (NSRect) rectForRoom: (NSPoint) roomCoordinates
+{
+	NSSize caretSize = self.caretSize;
+	
+	return NSMakeRect(roomCoordinates.x * caretSize.width, roomCoordinates.y * caretSize.height, caretSize.width, caretSize.height);
 }
 
 #pragma mark -
