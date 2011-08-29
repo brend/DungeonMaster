@@ -16,8 +16,8 @@
 {
     self = [super init];
     if (self) {
-		// Add your subclass-specific initialization here.
-		// If an error occurs here, send a [self release] message and return nil.
+		// Load a map for debugging
+		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM/zelda_castle_1.txt"] autorelease];
     }
     return self;
 }
@@ -63,6 +63,68 @@
 + (BOOL)autosavesInPlace
 {
     return YES;
+}
+
+#pragma mark -
+#pragma mark Commands
+
+- (void) selectRoom: (NSPoint) roomCoordinates
+{
+	int x = roomCoordinates.x, y = roomCoordinates.y;
+	
+	if (x < 0 || y < 0 || x >= self.mapWidth || y >= self.mapHeight)
+		return;
+	
+	// Save previous selection
+	NSPoint previousSelection = editor.selectedRoom;
+	
+	// Select the room
+	editor.selectedRoom = roomCoordinates;
+	
+	// Make action undo-able
+	[[self undoManager] registerUndoWithTarget: self selector: @selector(selectRoom:) object: [NSValue valueWithPoint: previousSelection]];
+}
+
+- (void) changeBackgroundToFile: (NSString *) filename
+{
+	// TODO: Check if file exists and is an image
+	NSString *previousFilename = self.map.image;
+	
+	self.map.image = filename;
+	editor.background = self.mapBackground;
+	
+	[[self undoManager] registerUndoWithTarget: self selector: @selector(changeBackgroundToFile:) object: previousFilename];
+}
+
+#pragma mark -
+#pragma mark Map Editor Data Source
+
+- (int) mapWidth
+{
+	return self.map.width;
+}
+
+- (int) mapHeight
+{
+	return self.map.height;
+}
+
+- (NSImage *) mapBackground
+{
+	return [[[NSImage alloc] initWithContentsOfFile: self.map.image] autorelease];
+}
+
+#pragma mark -
+#pragma mark Map Editor Delegate
+
+- (void) mapEditor: (DKMapEditor *) theEditor selectRoom: (NSPoint) roomCoordinates
+{
+	[self selectRoom: roomCoordinates];
+}
+
+- (void) mapEditor:(DKMapEditor *)theEditor changeBackground: (NSString *) filename
+{
+	[self changeBackgroundToFile: filename];
 }
 
 @end

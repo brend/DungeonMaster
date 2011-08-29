@@ -10,7 +10,10 @@
 
 @implementation DKMapEditor
 
-@synthesize background;
+@synthesize selectedRoom;
+
+#pragma mark -
+#pragma mark Initialization and Deallocation
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -22,6 +25,17 @@
     return self;
 }
 
+- (void)dealloc 
+{
+    delegate = nil;
+	dataSource = nil;
+	
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Drawing the View
+
 - (void)drawRect:(NSRect)dirtyRect
 {
 	[[NSColor lightGrayColor] setFill];
@@ -31,6 +45,41 @@
 				   fromRect: (NSRect) { .origin = NSZeroPoint, .size = background.size }
 				  operation: NSCompositeSourceOver fraction: 1.0];
 }
+
+- (NSImage *) background
+{
+	return background;
+}
+
+- (void) setBackground:(NSImage *) anImage
+{
+	[self willChangeValueForKey: @"background"];
+	[background autorelease];
+	background = [anImage retain];
+	[self didChangeValueForKey: @"background"];
+	[self setNeedsDisplay: YES];
+}
+
+- (NSSize)caretSize
+{
+	if (self.mapWidth == 0 || self.mapHeight == 0 || self.background == nil)
+		return NSZeroSize;
+	
+	return NSMakeSize(self.background.size.width / self.mapWidth, self.background.size.height / self.mapHeight);
+}
+
+- (int) mapWidth
+{
+	return dataSource.mapWidth;
+}
+
+- (int) mapHeight
+{
+	return dataSource.mapHeight;
+}
+
+#pragma mark -
+#pragma Drag and Drop
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender 
 {
@@ -58,12 +107,22 @@
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		NSString *file = [files objectAtIndex: 0];
 		
-		self.background = [[[NSImage alloc] initWithContentsOfFile: file] autorelease];
-		
-		[self setNeedsDisplay: YES];
+		[delegate mapEditor: self changeBackground: file];
     }
 	
     return YES;
+}
+
+#pragma mark -
+#pragma mark User Interface Events
+
+- (void) mouseDown: (NSEvent *) e
+{
+	NSPoint p = [self convertPoint: [e locationInWindow] fromView: nil];
+	NSSize caretSize = self.caretSize;
+	int x = floor(p.x / caretSize.width), y = floor(p.y / caretSize.height);
+	
+	[delegate mapEditor: self selectRoom: NSMakePoint(x, y)];
 }
 
 @end

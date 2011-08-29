@@ -180,10 +180,7 @@
 	return room.x + room.y * width;
 }
 
-- (NSString *) image
-{
-	return image;
-}
+@synthesize image;
 
 + (void) createBlankMapFile: (NSString *) filename 
 					  width: (int) w

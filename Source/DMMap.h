@@ -32,7 +32,7 @@
 - (DMRoom) roomWithIndex: (int) i;
 - (int) indexOfRoom: (DMRoom) room;
 
-- (NSString *) image;
+@property (copy) NSString *image;
 
 + (void) createBlankMapFile: (NSString *) filename 
 					  width: (int) w

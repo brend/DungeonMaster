@@ -8,12 +8,29 @@
 
 #import <Cocoa/Cocoa.h>
 #import "DMMap.h"
+#import "DKMapEditor.h"
 
-@interface DKDocument : NSDocument 
+@interface DKDocument : NSDocument <DKMapEditorDelegate, DKMapEditorDataSource>
 {
 	DMMap *map;
+	IBOutlet DKMapEditor *editor;
 }
 
 @property (retain) DMMap *map;
+
+#pragma mark -
+#pragma mark Map Editor Data Source
+@property (readonly) int mapWidth, mapHeight;
+
+#pragma mark -
+#pragma mark Map Editor Delegate
+- (void) mapEditor: (DKMapEditor *) theEditor selectRoom: (NSPoint) roomCoordinates;
+- (void) mapEditor:(DKMapEditor *)theEditor changeBackground: (NSString *) filename;
+
+#pragma mark -
+#pragma mark Commands
+
+- (void) selectRoom: (NSPoint) roomCoordinates;
+- (void) changeBackgroundToFile: (NSString *) filename;
 
 @end
