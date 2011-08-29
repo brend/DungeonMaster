@@ -61,8 +61,8 @@
 				  operation: NSCompositeSourceOver fraction: 1.0];
 	
 	// Highlight the selected room
-	[[NSColor blueColor] setFill];
-	NSRectFill([self rectForRoom: self.selectedRoom]);
+	[[NSColor colorWithDeviceRed: 0 green: 0 blue: 1 alpha: 0.5] setFill];
+	[NSBezierPath fillRect: [self rectForRoom: self.selectedRoom]];
 }
 
 - (NSImage *) background
