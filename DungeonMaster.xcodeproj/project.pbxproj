@@ -29,6 +29,7 @@
 		5F162E0A14090511008869BB /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D571408F9BE008869BB /* DMSearch.m */; };
 		5F162E0B14090541008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
+		5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */; };
 		5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF93263140986DF003E8518 /* DMMap(Saving).m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -75,6 +76,8 @@
 		5F162E05140901E1008869BB /* DKMapEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMapEditor.m; sourceTree = "<group>"; };
 		5F1A430313FD632B0027508F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
+		5FE2A57614122F7200B0709E /* DKChangeMapParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKChangeMapParameters.h; sourceTree = "<group>"; };
+		5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKChangeMapParameters.m; sourceTree = "<group>"; };
 		5FF93262140986DF003E8518 /* DMMap(Saving).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DMMap(Saving).h"; sourceTree = "<group>"; };
 		5FF93263140986DF003E8518 /* DMMap(Saving).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DMMap(Saving).m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -229,12 +232,11 @@
 		5F162E07140901EC008869BB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5FE2A57D141232D900B0709E /* Model */,
+				5FE2A57C141232C500B0709E /* Views */,
+				5FE2A57B141232B100B0709E /* Commands */,
 				5F162E0314090100008869BB /* DKDocument.h */,
 				5F162DF7140900AE008869BB /* DKDocument.m */,
-				5F162E04140901E1008869BB /* DKMapEditor.h */,
-				5F162E05140901E1008869BB /* DKMapEditor.m */,
-				5FF93262140986DF003E8518 /* DMMap(Saving).h */,
-				5FF93263140986DF003E8518 /* DMMap(Saving).m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -245,6 +247,33 @@
 				5F67805C0B96D9C700BD4E8D /* Map file format.txt */,
 			);
 			name = Notes;
+			sourceTree = "<group>";
+		};
+		5FE2A57B141232B100B0709E /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2A57614122F7200B0709E /* DKChangeMapParameters.h */,
+				5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
+		5FE2A57C141232C500B0709E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F162E04140901E1008869BB /* DKMapEditor.h */,
+				5F162E05140901E1008869BB /* DKMapEditor.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5FE2A57D141232D900B0709E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FF93262140986DF003E8518 /* DMMap(Saving).h */,
+				5FF93263140986DF003E8518 /* DMMap(Saving).m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +376,7 @@
 				5F162E0914090511008869BB /* DMNode.m in Sources */,
 				5F162E0A14090511008869BB /* DMSearch.m in Sources */,
 				5F162E0B14090541008869BB /* DMDefinitions.m in Sources */,
+				5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

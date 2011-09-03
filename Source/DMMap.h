@@ -20,6 +20,8 @@
 - (id) init;
 - (id) initWithContentsOfFile: (NSString *) filename;
 
+- (id) mapByChangingDimensions: (NSSize) dimensions;
+
 - (DMExit) connectionsAtX: (int) x
 						y: (int) y
 					 exit: (DMExit) e;

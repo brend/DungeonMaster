@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "DMMap.h"
 #import "DKMapEditor.h"
+#import "DKChangeMapParameters.h"
 
 @interface DKDocument : NSDocument <DKMapEditorDelegate, DKMapEditorDataSource>
 {
@@ -20,7 +21,7 @@
 
 #pragma mark -
 #pragma mark Map Editor Data Source
-@property (readonly) int mapWidth, mapHeight;
+@property (assign) int mapWidth, mapHeight;
 
 #pragma mark -
 #pragma mark Map Editor Delegate
@@ -32,5 +33,6 @@
 
 - (void) selectRoom: (NSPoint) roomCoordinates;
 - (void) changeBackgroundToFile: (NSString *) filename;
+- (void) changeMapDimensions: (DKChangeMapParameters *) parameters;
 
 @end

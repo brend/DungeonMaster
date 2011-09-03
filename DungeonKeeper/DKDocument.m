@@ -8,6 +8,16 @@
 
 #import "DKDocument.h"
 
+//
+// Private DKDocument Interface
+//
+@interface DKDocument ()
+- (void) prepareChangeOfMapDimensions: (NSSize) newDimensions;
+@end
+
+// 
+// DKDocument Implementation
+//
 @implementation DKDocument
 
 @synthesize map;
@@ -17,7 +27,7 @@
     self = [super init];
     if (self) {
 		// Load a map for debugging
-		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM/zelda_castle_1.txt"] autorelease];
+		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_1.txt"] autorelease];
     }
     return self;
 }
@@ -32,7 +42,17 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
 	[super windowControllerDidLoadNib:aController];
-	// Add any code here that needs to be executed once the windowController has loaded the document's window.
+
+	if (self.map && self.map.image) {
+		NSImage *background = [[NSImage alloc] initWithContentsOfFile: self.map.image];
+
+		if (background) {
+			editor.background = background;
+			[background release];
+		} else {
+			NSLog(@"Could not load background '%@'", self.map.image);
+		}
+	}
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
@@ -96,6 +116,27 @@
 	[[self undoManager] registerUndoWithTarget: self selector: @selector(changeBackgroundToFile:) object: previousFilename];
 }
 
+- (void) changeMapDimensions: (DKChangeMapParameters *) params
+{
+	NSSize newDimensions = params.dimensions;
+	
+	if (newDimensions.width <= 0 || newDimensions.height <= 0) {
+		NSLog(@"Invalid map dimensions: %d, %d", (int) newDimensions.width, (int) newDimensions.height);
+		return;
+	}
+	
+	NSSize previousDimensions = NSMakeSize(self.map.width, self.map.height);
+	DKChangeMapParameters *undoParams = [DKChangeMapParameters paramsWithMap: self.map dimensions: previousDimensions];
+	
+	self.map = params.map;
+	
+	// Make action undo-able
+	[[self undoManager] registerUndoWithTarget: self selector: @selector(changeMapDimensions:) object: undoParams];
+	
+	// Re-display map editor
+	[editor setNeedsDisplay: YES];
+}
+
 #pragma mark -
 #pragma mark Map Editor Data Source
 
@@ -104,14 +145,43 @@
 	return self.map.width;
 }
 
+- (void) setMapWidth:(int)mapWidth
+{
+	if (mapWidth > 0 && mapWidth != self.mapWidth) {
+		NSSize newDimensions = NSMakeSize(mapWidth, self.mapHeight);
+		
+		[self prepareChangeOfMapDimensions: newDimensions];
+	}
+}
+
 - (int) mapHeight
 {
 	return self.map.height;
 }
 
+- (void) setMapHeight:(int)mapHeight
+{
+	if (mapHeight > 0 && mapHeight != self.mapHeight) {
+		// Create new map with altered dimensions
+		NSSize newDimensions = NSMakeSize(self.mapWidth, mapHeight);
+		
+		[self prepareChangeOfMapDimensions: newDimensions];
+	}
+}
+
 - (NSImage *) mapBackground
 {
 	return [[[NSImage alloc] initWithContentsOfFile: self.map.image] autorelease];
+}
+
+- (void) prepareChangeOfMapDimensions: (NSSize) newDimensions
+{
+	// Create new map with altered dimensions	
+	DMMap *alteredMap = [self.map mapByChangingDimensions: newDimensions];
+	DKChangeMapParameters *params = [DKChangeMapParameters paramsWithMap: alteredMap dimensions: newDimensions];
+	
+	// Perform the change
+	[self changeMapDimensions: params];
 }
 
 #pragma mark -

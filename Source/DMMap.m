@@ -113,6 +113,22 @@
 	return self;
 }
 
+- (id) initWithDimensions: (NSSize) dimensions
+	   preferredStartRoom: (DMRoom) startRoom
+					rooms: (DMConnections *) theRooms
+					image: (NSString *) imageFilename
+{
+	if ((self = [super init])) {
+		width = (int) dimensions.width;
+		height = (int) dimensions.height;
+		preferredStartRoom = startRoom;
+		rooms = theRooms;
+		image = [imageFilename copy];
+	}
+	
+	return self;
+}
+
 - (void) dealloc
 {
 	if (rooms != NULL) {
@@ -120,7 +136,41 @@
 		rooms = NULL;
 	}
 	[image release];
+	image = nil;
 	[super dealloc];
+}
+
+- (id) mapByChangingDimensions: (NSSize) dimensions
+{
+	NSAssert(dimensions.width > 0, @"Width must be greater than 0");
+	NSAssert(dimensions.height > 0, @"Height must be greater than 0");
+	
+	int alteredWidth = (int) dimensions.width;
+	int alteredHeight = (int) dimensions.height;
+	
+	// Start room will be kept, if inside dimensions; (0,0) otherwise
+	DMRoom startRoom =
+		(preferredStartRoom.x >= 0 && preferredStartRoom.x < alteredWidth
+		 && preferredStartRoom.y >= 0 && preferredStartRoom.y < alteredHeight)
+			? preferredStartRoom
+			: DMMakeRoom(0, 0);
+	DMConnections *theRooms = (DMConnections *) malloc(alteredWidth * alteredHeight * sizeof(DMConnections));
+	
+	if (theRooms == NULL)
+		@throw [NSException exceptionWithName: @"Malloc failed" reason: @"Could not initialize theRooms" userInfo: [NSDictionary dictionaryWithObject: [NSValue valueWithSize: dimensions] forKey: @"dimensions"]];
+	
+	for (int i = 0; i < alteredWidth * alteredHeight; ++i)
+		theRooms[i] = DMMakeEmptyConnections();
+	
+	for (int y = 0; y < MIN(height, alteredHeight); ++y) {
+		for (int x = 0; x < MIN(width, alteredWidth); ++x) {
+			theRooms[y * alteredWidth + x] = rooms[y * width + x];
+		}
+	}
+	
+	DMMap *alteredMap = [[DMMap alloc] initWithDimensions: dimensions preferredStartRoom: startRoom rooms: theRooms image: self.image];
+	
+	return [alteredMap autorelease];
 }
 
 - (DMExit) connectionsAtX: (int) x
