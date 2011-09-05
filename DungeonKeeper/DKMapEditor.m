@@ -124,11 +124,7 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender 
 {
-    NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-	
-    sourceDragMask = [sender draggingSourceOperationMask];
-    pboard = [sender draggingPasteboard];
+    NSPasteboard *pboard = [sender draggingPasteboard];
 	
     if ( [[pboard types] containsObject: NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
