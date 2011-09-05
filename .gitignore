@@ -1,0 +1,6 @@
+.DS_Store
+DungeonMaster.xcodeproj/brph0000.*
+DungeonMaster.xcodeproj/xcuserdata
+DungeonMaster.xcodeproj/project.xcworkspace/xcuserdata
+build
+.gitignore
