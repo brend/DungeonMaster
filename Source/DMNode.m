@@ -188,7 +188,7 @@
 	return DMRoomsAreEqual([self room], [n room]) && entrance == [n entrance];
 }
 
-- (unsigned) hash
+- (NSUInteger) hash
 {
 	return [[NSNumber numberWithInt: room.x + room.y + entrance] hash];
 }

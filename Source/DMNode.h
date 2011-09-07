@@ -40,7 +40,7 @@
 - (NSArray *) successors;
 
 - (BOOL) isEqual: (id) n;
-- (unsigned) hash;
+- (NSUInteger) hash;
 
 - (NSComparisonResult) compare: (DMNode *) n;
 
