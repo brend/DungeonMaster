@@ -22,6 +22,7 @@
 #pragma mark -
 #pragma mark Map Editor Data Source
 @property (assign) int mapWidth, mapHeight;
+- (DMConnections) connectionsAtX: (NSInteger) x y: (NSInteger) y;
 
 #pragma mark -
 #pragma mark Map Editor Delegate

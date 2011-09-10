@@ -8,6 +8,17 @@
 
 #import "DKMapEditor.h"
 
+/*
+ * DKMapEditor Private Interface
+ */
+@interface DKMapEditor ()
+- (void) drawConnections: (DMConnections) connections inRect: (NSRect) rect;
+- (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q;
+@end
+
+/*
+ * DKMapEditor Implementation
+ */
 @implementation DKMapEditor
 
 #pragma mark -
@@ -63,6 +74,86 @@
 	// Highlight the selected room
 	[[NSColor colorWithDeviceRed: 0 green: 0 blue: 1 alpha: 0.5] setFill];
 	[NSBezierPath fillRect: [self rectForRoom: self.selectedRoom]];
+	
+	// Draw the connections
+	NSInteger mapWidth = self.mapWidth, mapHeight = self.mapHeight;
+	
+	for (NSInteger y = 0; y < mapHeight; ++y) {
+		for (NSInteger x = 0; x < mapWidth; ++x) {
+			NSRect roomRect = [self rectForRoom: NSMakePoint(x, y)];
+			DMConnections connections = [dataSource connectionsAtX: x y: y];
+			
+			[self drawConnections: connections inRect: roomRect];
+		}
+	}
+}
+
+- (void) drawConnections: (DMConnections) connections inRect: (NSRect) rect
+{
+	NSPoint 
+		north = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y + rect.size.height),
+		east = NSMakePoint(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height * 0.5f),
+		south = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y),
+		west = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height * 0.5f),
+		middle = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y + rect.size.height * 0.5f);
+	
+	DMExit e;
+	
+	
+	// Connections from northern entrance
+	e = connections.north;
+	
+	if (e & DMExitEast)
+		[self drawConnectionFrom: north over: middle to: east];
+	if (e & DMExitSouth)
+		[self drawConnectionFrom: north over: middle to: south];
+	if (e & DMExitWest)
+		[self drawConnectionFrom: north over: middle to: west];
+	
+	// Connections from eastern entrance
+	e = connections.east;
+	
+	if (e & DMExitNorth)
+		[self drawConnectionFrom: east over: middle to: north];
+	if (e & DMExitSouth)
+		[self drawConnectionFrom: east over: middle to: south];
+	if (e & DMExitWest)
+		[self drawConnectionFrom: east over: middle to: west];
+	
+	// Connections from southern entrance
+	e = connections.south;
+	
+	if (e & DMExitNorth)
+		[self drawConnectionFrom: south over: middle to: north];
+	if (e & DMExitEast)
+		[self drawConnectionFrom: south over: middle to: east];
+	if (e & DMExitWest)
+		[self drawConnectionFrom: south over: middle to: west];
+	
+	// Connections from western entrance
+	e = connections.west;
+	
+	if (e & DMExitNorth)
+		[self drawConnectionFrom: west over: middle to: north];
+	if (e & DMExitEast)
+		[self drawConnectionFrom: west over: middle to: east];
+	if (e & DMExitSouth)
+		[self drawConnectionFrom: west over: middle to: south];
+	
+	// Teleporter connection
+	// TODO Draw teleporter connection
+}
+
+- (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q
+{
+	NSBezierPath *path = [NSBezierPath bezierPath];
+	
+	[path moveToPoint: p];
+	[path lineToPoint: middle];
+	[path lineToPoint: q];
+	
+	[[NSColor greenColor] setStroke];
+	[path stroke];
 }
 
 - (NSImage *) background

@@ -18,6 +18,7 @@
 @protocol DKMapEditorDataSource <NSObject>
 @property (readonly) int mapWidth, mapHeight;
 @property (readonly) NSImage *mapBackground;
+- (DMConnections) connectionsAtX: (NSInteger) x y: (NSInteger) y;
 @end
 
 @interface DKMapEditor : NSView

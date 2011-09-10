@@ -184,6 +184,11 @@
 	[self changeMapDimensions: params];
 }
 
+- (DMConnections) connectionsAtX: (NSInteger) x y: (NSInteger) y
+{
+	return [self.map connectionsAtX: x y: y];
+}
+
 #pragma mark -
 #pragma mark Map Editor Delegate
 
