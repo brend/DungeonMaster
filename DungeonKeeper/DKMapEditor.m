@@ -12,8 +12,13 @@
  * DKMapEditor Private Interface
  */
 @interface DKMapEditor ()
+- (void) drawConnectionPointsInRect: (NSRect) rect;
 - (void) drawConnections: (DMConnections) connections inRect: (NSRect) rect;
-- (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q;
+- (void) drawConnectionFrom: (NSPoint) p 
+					   over: (NSPoint) middle
+						 to: (NSPoint) q;
+- (void) drawTeleportFrom: (NSPoint) p
+					   to: (NSPoint) q;
 @end
 
 /*
@@ -83,6 +88,10 @@
 			NSRect roomRect = [self rectForRoom: NSMakePoint(x, y)];
 			DMConnections connections = [dataSource connectionsAtX: x y: y];
 			
+			// Draw the connection indicators
+			if (self.drawConnectionIndicators)
+				[self drawConnectionPointsInRect: roomRect];
+			
 			[self drawConnections: connections inRect: roomRect];
 		}
 	}
@@ -97,8 +106,7 @@
 		west = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height * 0.5f),
 		middle = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y + rect.size.height * 0.5f);
 	
-	DMExit e;
-	
+	DMExit e = 0;
 	
 	// Connections from northern entrance
 	e = connections.north;
@@ -141,19 +149,106 @@
 		[self drawConnectionFrom: west over: middle to: south];
 	
 	// Teleporter connection
-	// TODO Draw teleporter connection
+	if (connections.teleportTarget >= 0) {
+		NSPoint teleporterEntrance;
+		
+//		switch (connections.teleportEntrance) {
+//			case DMExitNorth:
+//				teleporterEntrance = north;
+//				break;
+//			case DMExitEast:
+//				teleporterEntrance = east;
+//				break;
+//			case DMExitSouth:
+//				teleporterEntrance = south;
+//				break;
+//			case DMExitWest:
+//				teleporterEntrance = west;
+//				break;
+//			default:
+//				NSLog(@"Invalid teleporter entrance: %d", connections.teleportEntrance);
+//				break;
+//		}
+//		
+//		
+		
+		teleporterEntrance = NSMakePoint(rect.origin.x + 0.5f * rect.size.width, rect.origin.y + 0.5f * rect.size.height);
+		
+		NSPoint targetRoom = NSMakePoint(connections.teleportTarget % self.mapWidth, connections.teleportTarget / self.mapWidth);
+		NSRect targetRoomRect = [self rectForRoom: targetRoom];
+		NSPoint teleporterExit =
+			// TODO Make this the correct exit of the target room
+			NSMakePoint(targetRoomRect.origin.x + targetRoomRect.size.width * 0.5f, targetRoomRect.origin.y + targetRoomRect.size.height * 0.5f);
+//		NSPoint teleportCenter = NSMakePoint(teleporterEntrance.x + 0.5f * (teleporterExit.x - teleporterEntrance.x), 
+//											 teleporterEntrance.y + 0.5f * (teleporterExit.y - teleporterEntrance.y));
+		
+		[self drawTeleportFrom: teleporterEntrance to: teleporterExit];
+	}
 }
 
 - (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q
 {
 	NSBezierPath *path = [NSBezierPath bezierPath];
 	
+	[path setLineJoinStyle: NSRoundLineJoinStyle];
+	[path setLineCapStyle: NSRoundLineCapStyle];
+	[path setLineWidth: 3];
+	
 	[path moveToPoint: p];
 	[path lineToPoint: middle];
 	[path lineToPoint: q];
 	
+	[[NSColor blueColor] setStroke];
+	[path stroke];
+}
+
+- (void) drawTeleportFrom: (NSPoint) p to: (NSPoint) q
+{
+	NSBezierPath *path = [NSBezierPath bezierPath];
+	
+	[path setLineJoinStyle: NSRoundLineJoinStyle];
+	[path setLineCapStyle: NSRoundLineCapStyle];
+	[path setLineWidth: 3];
+	
+	float dash[] = { 4, 10 };
+	
+	[path setLineDash: dash count: 2 phase: 0];
+	
+	[path moveToPoint: p];
+	[path lineToPoint: q];
+	
 	[[NSColor greenColor] setStroke];
 	[path stroke];
+}
+
+- (void) drawConnectionPointsInRect: (NSRect) rect
+{
+	float ovalWidth = 16, ovalHeight = 16;
+	NSBezierPath *path;
+	
+	[[NSColor colorWithDeviceRed: 0 green: 0 blue: 1 alpha: 0.5] setFill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.origin.x - 0.5f * ovalWidth, rect.origin.y + 0.5f * (rect.size.height - ovalHeight), ovalWidth, ovalHeight)];
+	[path fill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.origin.x + 0.5f * (rect.size.width - ovalWidth), rect.origin.y, ovalWidth, ovalHeight)];
+	[path fill];
+}
+
+- (BOOL) drawConnectionIndicators
+{
+	return drawConnectionIndicators;
+}
+
+- (void) setDrawConnectionIndicators:(BOOL) flag
+{
+	if (flag == drawConnectionIndicators)
+		return;
+	
+	[self willChangeValueForKey: @"drawConnectionIndicators"];
+	drawConnectionIndicators = flag;
+	[self didChangeValueForKey: @"drawConnectionIndicators"];
+	[self setNeedsDisplay: YES];
 }
 
 - (NSImage *) background

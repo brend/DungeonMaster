@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
 		// Load a map for debugging
-		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_1.txt"] autorelease];
+		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_5.txt"] autorelease];
     }
     return self;
 }
@@ -200,6 +200,18 @@
 - (void) mapEditor:(DKMapEditor *)theEditor changeBackground: (NSString *) filename
 {
 	[self changeBackgroundToFile: filename];
+}
+
+#pragma mark -
+#pragma mark Display Options
+- (BOOL) drawConnectionIndicators
+{
+	return editor.drawConnectionIndicators;
+}
+
+- (void) setDrawConnectionIndicators:(BOOL) flag
+{
+	editor.drawConnectionIndicators = flag;
 }
 
 @end

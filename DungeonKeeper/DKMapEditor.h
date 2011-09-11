@@ -25,12 +25,14 @@
 {
 	NSImage *background;
 	NSPoint selectedRoom;
+	BOOL drawConnectionIndicators;
 	
 	IBOutlet id<DKMapEditorDelegate> delegate;
 	IBOutlet id<DKMapEditorDataSource> dataSource;
 }
 
 @property (retain) NSImage *background;
+@property BOOL drawConnectionIndicators;
 @property (readonly) NSSize caretSize;
 - (NSRect) rectForRoom: (NSPoint) roomCoordinates;
 @property (readonly) int mapWidth, mapHeight;

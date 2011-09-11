@@ -36,4 +36,8 @@
 - (void) changeBackgroundToFile: (NSString *) filename;
 - (void) changeMapDimensions: (DKChangeMapParameters *) parameters;
 
+#pragma mark -
+#pragma mark Display Options
+@property BOOL drawConnectionIndicators;
+
 @end
