@@ -131,6 +131,9 @@
 					nr.x += 1;
 					ne = DMExitWest;
 					break;
+				default:
+					NSLog(@"Unexpected value for 'e': %d", e);
+					break;
 			}
 			
 			if (!(nr.x < 0 || nr.x >= [map width] || nr.y < 0 || nr.y >= [map height]))
@@ -155,6 +158,9 @@
 			break;
 		case DMExitEast:
 			allTeleportEntrances = c.east;
+			break;
+		default:
+			NSLog(@"Unexpected value for 'c.teleportEntrance': %d", c.teleportEntrance);
 			break;
 	}
 	
