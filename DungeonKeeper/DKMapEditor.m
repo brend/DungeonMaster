@@ -150,37 +150,12 @@
 	
 	// Teleporter connection
 	if (connections.teleportTarget >= 0) {
-		NSPoint teleporterEntrance;
-		
-//		switch (connections.teleportEntrance) {
-//			case DMExitNorth:
-//				teleporterEntrance = north;
-//				break;
-//			case DMExitEast:
-//				teleporterEntrance = east;
-//				break;
-//			case DMExitSouth:
-//				teleporterEntrance = south;
-//				break;
-//			case DMExitWest:
-//				teleporterEntrance = west;
-//				break;
-//			default:
-//				NSLog(@"Invalid teleporter entrance: %d", connections.teleportEntrance);
-//				break;
-//		}
-//		
-//		
-		
-		teleporterEntrance = NSMakePoint(rect.origin.x + 0.5f * rect.size.width, rect.origin.y + 0.5f * rect.size.height);
+		NSPoint teleporterEntrance = NSMakePoint(rect.origin.x + 0.5f * rect.size.width, rect.origin.y + 0.5f * rect.size.height);
 		
 		NSPoint targetRoom = NSMakePoint(connections.teleportTarget % self.mapWidth, connections.teleportTarget / self.mapWidth);
 		NSRect targetRoomRect = [self rectForRoom: targetRoom];
 		NSPoint teleporterExit =
-			// TODO Make this the correct exit of the target room
 			NSMakePoint(targetRoomRect.origin.x + targetRoomRect.size.width * 0.5f, targetRoomRect.origin.y + targetRoomRect.size.height * 0.5f);
-//		NSPoint teleportCenter = NSMakePoint(teleporterEntrance.x + 0.5f * (teleporterExit.x - teleporterEntrance.x), 
-//											 teleporterEntrance.y + 0.5f * (teleporterExit.y - teleporterEntrance.y));
 		
 		[self drawTeleportFrom: teleporterEntrance to: teleporterExit];
 	}
