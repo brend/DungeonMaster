@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "DMMap.h"
 #import "DKMapEditor.h"
+#import "DKRoomZoomView.h"
 #import "DKChangeMapParameters.h"
 
 @interface DKDocument : NSDocument <DKMapEditorDelegate, DKMapEditorDataSource>
 {
 	DMMap *map;
 	IBOutlet DKMapEditor *editor;
+	IBOutlet DKRoomZoomView *roomZoom;
 }
 
 @property (retain) DMMap *map;

@@ -13,6 +13,7 @@
 //
 @interface DKDocument ()
 - (void) prepareChangeOfMapDimensions: (NSSize) newDimensions;
+- (NSRect) clipRectForRoom: (NSPoint) roomCoordinates;
 @end
 
 // 
@@ -48,6 +49,7 @@
 
 		if (background) {
 			editor.background = background;
+			roomZoom.background = background;
 			[background release];
 		} else {
 			NSLog(@"Could not load background '%@'", self.map.image);
@@ -98,8 +100,12 @@
 	// Save previous selection
 	NSPoint previousSelection = editor.selectedRoom;
 	
-	// Select the room
+	// Select the room in the editor
 	editor.selectedRoom = roomCoordinates;
+	
+	// Select the room in the zoom view
+	roomZoom.backgroundClipRect = [self clipRectForRoom: roomCoordinates];
+	[roomZoom setNeedsDisplay: YES];
 	
 	// Make action undo-able
 	[[self undoManager] registerUndoWithTarget: self selector: @selector(selectRoom:) object: [NSValue valueWithPoint: previousSelection]];
@@ -112,6 +118,7 @@
 	
 	self.map.image = filename;
 	editor.background = self.mapBackground;
+	roomZoom.background = self.mapBackground;
 	
 	[[self undoManager] registerUndoWithTarget: self selector: @selector(changeBackgroundToFile:) object: previousFilename];
 }
@@ -212,6 +219,16 @@
 - (void) setDrawConnectionIndicators:(BOOL) flag
 {
 	editor.drawConnectionIndicators = flag;
+}
+
+#pragma mark -
+#pragma mark Auxiliary Display Stuff
+
+- (NSRect) clipRectForRoom: (NSPoint) roomCoordinates
+{
+	NSSize caretSize = [editor caretSize];
+	
+	return NSMakeRect(roomCoordinates.x * caretSize.width, roomCoordinates.y * caretSize.height, caretSize.width, caretSize.height);
 }
 
 @end

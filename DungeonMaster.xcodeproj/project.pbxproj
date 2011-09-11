@@ -11,7 +11,6 @@
 		5F162D5A1408F9BE008869BB /* DMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */; };
 		5F162D5C1408F9BE008869BB /* DMMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D511408F9BE008869BB /* DMMap.m */; };
 		5F162D5D1408F9BE008869BB /* DMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D531408F9BE008869BB /* DMModel.m */; };
-		5F162D5E1408F9BE008869BB /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
 		5F162D5F1408F9BE008869BB /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D571408F9BE008869BB /* DMSearch.m */; };
 		5F162D601408F9BE008869BB /* DungeonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D591408F9BE008869BB /* DungeonView.m */; };
 		5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
@@ -29,6 +28,7 @@
 		5F162E0A14090511008869BB /* DMSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D571408F9BE008869BB /* DMSearch.m */; };
 		5F162E0B14090541008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
+		5F4A4C7A141CCECF0092D559 /* DKRoomZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */; };
 		5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */; };
 		5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF93263140986DF003E8518 /* DMMap(Saving).m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -75,6 +75,8 @@
 		5F162E04140901E1008869BB /* DKMapEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMapEditor.h; sourceTree = "<group>"; };
 		5F162E05140901E1008869BB /* DKMapEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMapEditor.m; sourceTree = "<group>"; };
 		5F1A430313FD632B0027508F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5F4A4C78141CCECF0092D559 /* DKRoomZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRoomZoomView.h; sourceTree = "<group>"; };
+		5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRoomZoomView.m; sourceTree = "<group>"; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
 		5FE2A57614122F7200B0709E /* DKChangeMapParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKChangeMapParameters.h; sourceTree = "<group>"; };
 		5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKChangeMapParameters.m; sourceTree = "<group>"; };
@@ -263,6 +265,8 @@
 			children = (
 				5F162E04140901E1008869BB /* DKMapEditor.h */,
 				5F162E05140901E1008869BB /* DKMapEditor.m */,
+				5F4A4C78141CCECF0092D559 /* DKRoomZoomView.h */,
+				5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -377,6 +381,7 @@
 				5F162E0A14090511008869BB /* DMSearch.m in Sources */,
 				5F162E0B14090541008869BB /* DMDefinitions.m in Sources */,
 				5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */,
+				5F4A4C7A141CCECF0092D559 /* DKRoomZoomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +393,6 @@
 				5F162D5A1408F9BE008869BB /* DMApplicationDelegate.m in Sources */,
 				5F162D5C1408F9BE008869BB /* DMMap.m in Sources */,
 				5F162D5D1408F9BE008869BB /* DMModel.m in Sources */,
-				5F162D5E1408F9BE008869BB /* DMNode.m in Sources */,
 				5F162D5F1408F9BE008869BB /* DMSearch.m in Sources */,
 				5F162D601408F9BE008869BB /* DungeonView.m in Sources */,
 				5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */,
