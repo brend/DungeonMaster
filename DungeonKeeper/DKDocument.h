@@ -12,7 +12,7 @@
 #import "DKRoomZoomView.h"
 #import "DKChangeMapParameters.h"
 
-@interface DKDocument : NSDocument <DKMapEditorDelegate, DKMapEditorDataSource>
+@interface DKDocument : NSDocument <DKMapEditorDelegate, DKMapEditorDataSource, DKRoomZoomViewDelegate>
 {
 	DMMap *map;
 	IBOutlet DKMapEditor *editor;
@@ -30,6 +30,10 @@
 #pragma mark Map Editor Delegate
 - (void) mapEditor: (DKMapEditor *) theEditor selectRoom: (NSPoint) roomCoordinates;
 - (void) mapEditor:(DKMapEditor *)theEditor changeBackground: (NSString *) filename;
+
+#pragma mark -
+#pragma mark Room Zoom View Delegate
+- (void) roomZoom:(DKRoomZoomView *)rzv makeConnectionFromExit:(DMExit)start toExit:(DMExit)end;
 
 #pragma mark -
 #pragma mark Commands

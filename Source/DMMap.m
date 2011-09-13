@@ -202,6 +202,16 @@
 	return rooms[y * width + x];
 }
 
+- (void) setConnections: (DMConnections) connections
+					atX: (int) x
+					  y: (int) y
+{
+	if (x < 0 || x >= width || y < 0 || y >= height)
+		@throw [NSException exceptionWithName: @"IndexOutOfBounds" reason: [NSString stringWithFormat: @"Invalid index (%d, %d)", x, y, nil] userInfo: nil];
+
+	rooms[y * width + x] = connections;
+}
+
 - (int) width
 {
 	return width;

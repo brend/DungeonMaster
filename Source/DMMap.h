@@ -27,6 +27,9 @@
 					 exit: (DMExit) e;
 - (DMConnections) connectionsAtX: (int) x
 							  y: (int) y;
+- (void) setConnections: (DMConnections) connections
+					atX: (int) x
+					  y: (int) y;
 
 - (int) width;
 - (int) height;

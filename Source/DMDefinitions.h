@@ -29,3 +29,5 @@ BOOL DMRoomsAreEqual(DMRoom a, DMRoom b);
 DMExit DMGetExitByName(NSString *name);
 DMExit DMGetExitByInitial(NSString *initial);
 DMConnections DMMakeEmptyConnections();
+
+CGFloat DMPointDistance(NSPoint p, NSPoint q);

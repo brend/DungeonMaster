@@ -210,6 +210,38 @@
 }
 
 #pragma mark -
+#pragma mark Room Zoom View Delegate
+- (void) roomZoom:(DKRoomZoomView *)rzv makeConnectionFromExit:(DMExit)start toExit:(DMExit)end
+{
+	// TODO: Make this undo-able
+	NSPoint selectedRoom = editor.selectedRoom;
+	DMConnections connections = [self.map connectionsAtX: selectedRoom.x y: selectedRoom.y];
+	
+	switch (start) {
+		case DMExitNorth:
+			connections.north = connections.north | end;
+			break;
+		case DMExitEast:
+			connections.east = connections.east | end;
+			break;
+		case DMExitSouth:
+			connections.south = connections.south | end;
+			break;
+		case DMExitWest:
+			connections.west = connections.west | end;
+			break;
+		default:
+			NSLog(@"Unexpected connection start: %d", start);
+			break;
+	}
+	
+	[self.map setConnections: connections atX: selectedRoom.x y: selectedRoom.y];
+	
+	[editor setNeedsDisplay: YES];
+	[roomZoom setNeedsDisplay: YES];
+}
+
+#pragma mark -
 #pragma mark Display Options
 - (BOOL) drawConnectionIndicators
 {

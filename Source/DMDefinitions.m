@@ -84,3 +84,10 @@ inline DMConnections DMMakeEmptyConnections()
 	
 	return c;
 }
+
+inline CGFloat DMPointDistance(NSPoint p, NSPoint q)
+{
+	CGFloat dx = q.x - p.x, dy = q.y - p.y;
+	
+	return sqrtf(dx * dx + dy * dy);
+}

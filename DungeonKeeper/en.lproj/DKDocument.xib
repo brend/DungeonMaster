@@ -48,7 +48,7 @@
 			<object class="NSWindowTemplate" id="275939982">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{133, 235}, {507, 413}}</string>
+				<string key="NSWindowRect">{{701, 438}, {507, 413}}</string>
 				<int key="NSWTFlags">1886912512</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -113,7 +113,6 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{1, 341}, {492, 15}}</string>
 									<reference key="NSSuperview" ref="824338435"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:30</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -270,7 +269,7 @@
 			<object class="NSWindowTemplate" id="731087264">
 				<int key="NSWindowStyleMask">8223</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 240}, {290, 253}}</string>
+				<string key="NSWindowRect">{{453, 456}, {290, 253}}</string>
 				<int key="NSWTFlags">611845120</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -287,7 +286,6 @@
 							<string key="NSFrameSize">{290, 253}</string>
 							<reference key="NSSuperview" ref="656271953"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:499</string>
 							<string key="NSClassName">DKRoomZoomView</string>
 						</object>
@@ -449,6 +447,14 @@
 						<reference key="destination" ref="616744310"/>
 					</object>
 					<int key="connectionID">100059</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="616744310"/>
+						<reference key="destination" ref="512844837"/>
+					</object>
+					<int key="connectionID">100060</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -700,7 +706,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100059</int>
+			<int key="maxID">100060</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -788,6 +794,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DKRoomZoomView</string>
 					<string key="superclassName">NSView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DKRoomZoomView.h</string>
