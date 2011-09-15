@@ -54,9 +54,12 @@
 		
 		[[NSColor blueColor] setStroke];
 		
+		float dash[] = { 8, 10 };
+		[path setLineDash: dash count: 2 phase: 0];
+		
 		[path moveToPoint: startPoint];
 		[path lineToPoint: currentMousePosition];
-		[path setLineWidth: 2];
+		[path setLineWidth: 5];
 		[path stroke];
 	}
 }
