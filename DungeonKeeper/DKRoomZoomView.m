@@ -16,6 +16,7 @@
 - (NSPoint) connectionStartCoordinates;
 - (void) drawConnectionsInRect: (NSRect) rect;
 - (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q;
+- (void) drawConnectionPointsInRect: (NSRect) rect;
 @end
 
 /*
@@ -39,6 +40,9 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
 	[self.background drawInRect: self.frame fromRect: self.backgroundClipRect operation: NSCompositeSourceOver fraction: 1];
+	
+	// Draw connection indicators
+	[self drawConnectionPointsInRect: self.frame];
 	
 	// Draw existing connections
 	[self drawConnectionsInRect: self.frame];
@@ -128,7 +132,7 @@
 	
 	[path setLineJoinStyle: NSRoundLineJoinStyle];
 	[path setLineCapStyle: NSRoundLineCapStyle];
-	[path setLineWidth: 3];
+	[path setLineWidth: 5];
 	
 	[path moveToPoint: p];
 	[path lineToPoint: middle];
@@ -136,6 +140,26 @@
 	
 	[[NSColor blueColor] setStroke];
 	[path stroke];
+}
+
+- (void) drawConnectionPointsInRect: (NSRect) rect
+{
+	float ovalWidth = 16, ovalHeight = 16;
+	NSBezierPath *path;
+	
+	[[NSColor colorWithDeviceRed: 0 green: 0 blue: 1 alpha: 0.5] setFill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.origin.x, rect.origin.y + 0.5f * (rect.size.height - ovalHeight), ovalWidth, ovalHeight)];
+	[path fill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.origin.x + 0.5f * (rect.size.width - ovalWidth), rect.origin.y, ovalWidth, ovalHeight)];
+	[path fill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.origin.x + 0.5f * (rect.size.width - ovalWidth), rect.size.height - ovalHeight, ovalWidth, ovalHeight)];
+	[path fill];
+	
+	path = [NSBezierPath bezierPathWithOvalInRect: NSMakeRect(rect.size.width - ovalWidth, rect.origin.y + 0.5f * (rect.size.height - ovalHeight), ovalWidth, ovalHeight)];
+	[path fill];
 }
 
 #pragma mark -
