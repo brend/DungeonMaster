@@ -56,7 +56,7 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{94, 86}</string>
 				<object class="NSView" key="NSWindowView" id="568628114">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -252,7 +252,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{507, 413}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="165159666"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -267,11 +266,11 @@
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="731087264">
-				<int key="NSWindowStyleMask">8223</int>
+				<int key="NSWindowStyleMask">8351</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{453, 456}, {290, 253}}</string>
 				<int key="NSWTFlags">611845120</int>
-				<string key="NSWindowTitle">Window</string>
+				<string key="NSWindowTitle">Room Zoom</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
@@ -286,6 +285,7 @@
 							<string key="NSFrameSize">{290, 253}</string>
 							<reference key="NSSuperview" ref="656271953"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:499</string>
 							<string key="NSClassName">DKRoomZoomView</string>
 						</object>
@@ -455,6 +455,14 @@
 						<reference key="destination" ref="512844837"/>
 					</object>
 					<int key="connectionID">100060</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">roomZoomPanel</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="731087264"/>
+					</object>
+					<int key="connectionID">100061</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -706,7 +714,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100060</int>
+			<int key="maxID">100061</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -720,11 +728,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>editor</string>
 							<string>roomZoom</string>
+							<string>roomZoomPanel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>DKMapEditor</string>
 							<string>DKRoomZoomView</string>
+							<string>NSPanel</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -733,6 +743,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>editor</string>
 							<string>roomZoom</string>
+							<string>roomZoomPanel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -743,6 +754,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">roomZoom</string>
 								<string key="candidateClassName">DKRoomZoomView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">roomZoomPanel</string>
+								<string key="candidateClassName">NSPanel</string>
 							</object>
 						</object>
 					</object>

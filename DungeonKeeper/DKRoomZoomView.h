@@ -19,13 +19,19 @@
 	NSImage *background;
 	NSRect backgroundClipRect;
 	
+	DMConnections connections;
+	
 	DMExit connectionStart, connectionEnd;
+	
+	NSPoint currentMousePosition;
 	
 	IBOutlet id<DKRoomZoomViewDelegate> delegate;
 }
 
 @property (retain) NSImage *background;
 @property NSRect backgroundClipRect;
+
+@property DMConnections connections;
 
 - (DMExit) connectionPointFromPoint: (NSPoint) p;
 - (void) makeConnection;

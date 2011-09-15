@@ -55,6 +55,9 @@
 			NSLog(@"Could not load background '%@'", self.map.image);
 		}
 	}
+	
+	// Set up room zoom
+	[roomZoomPanel setAcceptsMouseMovedEvents: YES];
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
@@ -105,6 +108,7 @@
 	
 	// Select the room in the zoom view
 	roomZoom.backgroundClipRect = [self clipRectForRoom: roomCoordinates];
+	roomZoom.connections = [self.map connectionsAtX: x y: y];
 	[roomZoom setNeedsDisplay: YES];
 	
 	// Make action undo-able
@@ -236,6 +240,8 @@
 	}
 	
 	[self.map setConnections: connections atX: selectedRoom.x y: selectedRoom.y];
+	
+	roomZoom.connections = connections;
 	
 	[editor setNeedsDisplay: YES];
 	[roomZoom setNeedsDisplay: YES];

@@ -16,6 +16,7 @@
 {
 	DMMap *map;
 	IBOutlet DKMapEditor *editor;
+	IBOutlet NSPanel *roomZoomPanel;
 	IBOutlet DKRoomZoomView *roomZoom;
 }
 
