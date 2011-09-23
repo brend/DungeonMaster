@@ -8,6 +8,9 @@
 
 #import "DMMap.h"
 
+@interface DMMap ()
+- (NSString *) encodeConnections: (DMExit) connections;
+@end
 
 @implementation DMMap
 
@@ -326,6 +329,61 @@
 	*h = [(NSString *) [size objectAtIndex: 1] intValue];
 	
 	return YES;
+}
+
+#pragma mark -
+#pragma mark Serializing the Map
+
+- (NSString *) stringRepresentation
+{
+	NSMutableString *text = [NSMutableString string];
+	
+	[text appendFormat: @"%@\n", self.image];
+	[text appendFormat: @"%d,%d\n", self.width, self.height];
+	[text appendFormat: @"%d\n", [self indexOfRoom: self.preferredStartRoom]];
+	
+	for (NSInteger i = 0; i < self.width * self.height; ++i) {
+		DMRoom room = [self roomWithIndex: i];
+		DMConnections connections = [self connectionsAtX: room.x y: room.y];
+		NSString *cs = nil;
+		
+		cs = [self encodeConnections: connections.north];
+		if (cs.length > 0)
+			[text appendFormat: @"%d north = %@\n", i, cs];
+		
+		cs = [self encodeConnections: connections.east];
+		if (cs.length > 0)
+			[text appendFormat: @"%d east = %@\n", i, cs];
+		
+		cs = [self encodeConnections: connections.south];
+		if (cs.length > 0)
+			[text appendFormat: @"%d south = %@\n", i, cs];
+		
+		cs = [self encodeConnections: connections.west];
+		if (cs.length > 0)
+			[text appendFormat: @"%d west = %@\n", i, cs];
+		
+		if (connections.teleportTarget >= 0)
+			[text appendFormat: @"%d teleport = %@ %d %@\n", i, connections.teleportEntrance, connections.teleportTarget, connections.teleportExit];
+	}
+	
+	return text;
+}
+
+- (NSString *) encodeConnections: (DMExit) connections
+{
+	NSMutableString *text = [NSMutableString string];
+	
+	if (connections & DMExitNorth)
+		[text appendString: @"n"];
+	if (connections & DMExitEast)
+		[text appendString: @"e"];
+	if (connections & DMExitSouth)
+		[text appendString: @"s"];
+	if (connections & DMExitWest)
+		[text appendString: @"w"];
+	
+	return text;
 }
 
 @end

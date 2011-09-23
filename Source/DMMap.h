@@ -54,4 +54,6 @@
 
 + (BOOL) parseLine: (NSString *) l forWidth: (int *) w height: (int *) h;
 
+- (NSString *) stringRepresentation;
+
 @end

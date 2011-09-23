@@ -28,7 +28,7 @@
     self = [super init];
     if (self) {
 		// Load a map for debugging
-		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_5.txt"] autorelease];
+		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_1.txt"] autorelease];
     }
     return self;
 }
@@ -62,14 +62,9 @@
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
-	/*
-	 Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-	You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-	*/
-	if (outError) {
-	    *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
-	}
-	return nil;
+	NSString *text = [self.map stringRepresentation];
+		
+	return [text dataUsingEncoding: NSUTF8StringEncoding];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
