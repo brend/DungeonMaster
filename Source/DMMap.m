@@ -339,7 +339,7 @@
 	NSMutableString *text = [NSMutableString string];
 	
 	[text appendFormat: @"%@\n", self.image];
-	[text appendFormat: @"%d,%d\n", self.width, self.height];
+	[text appendFormat: @"%d %d\n", self.width, self.height];
 	[text appendFormat: @"%d\n", [self indexOfRoom: self.preferredStartRoom]];
 	
 	for (NSInteger i = 0; i < self.width * self.height; ++i) {

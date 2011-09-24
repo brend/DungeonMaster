@@ -27,8 +27,6 @@
 {
     self = [super init];
     if (self) {
-		// Load a map for debugging
-		self.map = [[[DMMap alloc] initWithContentsOfFile: @"/Users/brph0000/Desktop/DM-Test/zelda_castle_1.txt"] autorelease];
     }
     return self;
 }
@@ -67,17 +65,45 @@
 	return [text dataUsingEncoding: NSUTF8StringEncoding];
 }
 
-- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+- (BOOL)readFromURL:(NSURL *)absoluteURL ofType:(NSString *)typeName error:(NSError **)outError
 {
-	/*
-	Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-	You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-	If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-	*/
-	if (outError) {
-	    *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+	if (!absoluteURL.isFileURL) {
+		if (outError)
+			*outError = [NSError errorWithDomain: @"Only file URLs allowed" code: 0 userInfo: nil];
+		
+		return NO;
 	}
-	return YES;
+	
+	NSString *filename = absoluteURL.path;
+	
+	// Set working directory to file path
+	NSString *directory = [absoluteURL.path stringByDeletingLastPathComponent];
+	
+	[[NSFileManager defaultManager] changeCurrentDirectoryPath: directory];
+	
+	// Read the map file
+	DMMap *mapFromFile = nil;
+	
+	@try	{
+		mapFromFile = [[DMMap alloc] initWithContentsOfFile: filename];
+	} @catch (NSException *e) {
+		if (outError)
+			*outError = [NSError errorWithDomain: [e description] code: 0 userInfo: nil];
+		
+		return NO;
+	}
+		
+	if (mapFromFile) {
+		self.map = mapFromFile;
+		[mapFromFile release];
+		
+		return YES;
+	} else {
+		if (outError)
+			*outError = [NSError errorWithDomain: @"Could not read map file" code: 0 userInfo: nil];
+		
+		return NO;
+	}
 }
 
 + (BOOL)autosavesInPlace
