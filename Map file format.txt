@@ -1,5 +1,5 @@
 <image file name>
-<width, height>
+<width><space><height>
 <linear room index of starting position>
 <Line 1>
 <Line 2>
