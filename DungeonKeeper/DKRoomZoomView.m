@@ -196,20 +196,7 @@
 	NSPoint p = [self convertPoint: [e locationInWindow] fromView: nil];
 	DMExit clickedExit = [self connectionPointFromPoint: p];
 	
-	if (connectionStart == DMExitNone) {
-		connectionStart = clickedExit;
-		connectionEnd = DMExitNone;
-	} else {
-		connectionEnd = clickedExit;
-		
-		if (connectionStart != DMExitNone && connectionEnd != DMExitNone && connectionStart != connectionEnd) {
-			[self makeConnection];
-		}
-		
-		connectionStart = connectionEnd = DMExitNone;
-	}
-	
-	[self setNeedsDisplay: YES];
+	[self exitHasBeenSelected: clickedExit];
 }
 
 - (void)mouseMoved:(NSEvent *) e
@@ -222,15 +209,9 @@
 	}
 }
 
-//- (void)mouseUp:(NSEvent *) e
+//- (void)keyDown:(NSEvent *)theEvent
 //{
-//	NSPoint p = [self convertPoint: [e locationInWindow] fromView: nil];
-//
-//	connectionEnd = [self connectionPointFromPoint: p];
 //	
-//	if (connectionStart != DMExitNone && connectionEnd != DMExitNone && connectionStart != connectionEnd) {
-//		[self makeConnection];
-//	}
 //}
 
 - (DMExit) connectionPointFromPoint:(NSPoint)p
@@ -275,9 +256,50 @@
 	}
 }
 
+- (void) moveLeft:(id)sender
+{
+	[self exitHasBeenSelected: DMExitWest];
+}
+
+- (void) moveRight:(id)sender
+{
+	[self exitHasBeenSelected: DMExitEast];
+}
+
+- (void) moveUp:(id)sender
+{
+	[self exitHasBeenSelected: DMExitNorth];
+}
+
+- (void) moveDown:(id)sender
+{
+	[self exitHasBeenSelected: DMExitSouth];
+}
+
+#pragma mark -
+#pragma mark Making and Breaking Connections
+
 - (void) makeConnection
 {
-	[delegate roomZoom: self makeConnectionFromExit: connectionStart toExit: connectionEnd];
+	[delegate roomZoom: self toggleConnectionFromExit: connectionStart toExit: connectionEnd];
+}
+
+- (void) exitHasBeenSelected: (DMExit) selectedExit
+{
+	if (connectionStart == DMExitNone) {
+		connectionStart = selectedExit;
+		connectionEnd = DMExitNone;
+	} else {
+		connectionEnd = selectedExit;
+		
+		if (connectionStart != DMExitNone && connectionEnd != DMExitNone && connectionStart != connectionEnd) {
+			[self makeConnection];
+		}
+		
+		connectionStart = connectionEnd = DMExitNone;
+	}
+	
+	[self setNeedsDisplay: YES];
 }
 
 @end

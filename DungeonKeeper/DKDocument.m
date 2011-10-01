@@ -236,7 +236,7 @@
 
 #pragma mark -
 #pragma mark Room Zoom View Delegate
-- (void) roomZoom:(DKRoomZoomView *)rzv makeConnectionFromExit:(DMExit)start toExit:(DMExit)end
+- (void) roomZoom:(DKRoomZoomView *)rzv toggleConnectionFromExit:(DMExit)start toExit:(DMExit)end
 {
 	// TODO: Make this undo-able
 	NSPoint selectedRoom = editor.selectedRoom;
@@ -244,16 +244,16 @@
 	
 	switch (start) {
 		case DMExitNorth:
-			connections.north = connections.north | end;
+			connections.north = connections.north ^ end;
 			break;
 		case DMExitEast:
-			connections.east = connections.east | end;
+			connections.east = connections.east ^ end;
 			break;
 		case DMExitSouth:
-			connections.south = connections.south | end;
+			connections.south = connections.south ^ end;
 			break;
 		case DMExitWest:
-			connections.west = connections.west | end;
+			connections.west = connections.west ^ end;
 			break;
 		default:
 			NSLog(@"Unexpected connection start: %d", start);

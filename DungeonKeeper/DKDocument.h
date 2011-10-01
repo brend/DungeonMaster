@@ -34,7 +34,7 @@
 
 #pragma mark -
 #pragma mark Room Zoom View Delegate
-- (void) roomZoom:(DKRoomZoomView *)rzv makeConnectionFromExit:(DMExit)start toExit:(DMExit)end;
+- (void) roomZoom:(DKRoomZoomView *)rzv toggleConnectionFromExit:(DMExit)start toExit:(DMExit)end;
 
 #pragma mark -
 #pragma mark Commands

@@ -11,7 +11,7 @@
 @class DKRoomZoomView;
 
 @protocol DKRoomZoomViewDelegate <NSObject>
-- (void) roomZoom: (DKRoomZoomView *) rzv makeConnectionFromExit: (DMExit) start toExit: (DMExit) end;
+- (void) roomZoom: (DKRoomZoomView *) rzv toggleConnectionFromExit: (DMExit) start toExit: (DMExit) end;
 @end
 
 @interface DKRoomZoomView : NSView
@@ -35,5 +35,7 @@
 
 - (DMExit) connectionPointFromPoint: (NSPoint) p;
 - (void) makeConnection;
+
+- (void) exitHasBeenSelected: (DMExit) e;
 
 @end
