@@ -27,6 +27,7 @@
 {
     self = [super init];
     if (self) {
+		self.map = [DMMap map];
     }
     return self;
 }

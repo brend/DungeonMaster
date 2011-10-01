@@ -18,6 +18,7 @@
 }
 
 - (id) init;
++ (id) map;
 - (id) initWithContentsOfFile: (NSString *) filename;
 
 - (id) mapByChangingDimensions: (NSSize) dimensions;

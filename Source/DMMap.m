@@ -17,9 +17,16 @@
 - (id) init
 {
 	if (self = [super init]) {
+		width = height = 1;
+		rooms = (DMConnections *) malloc(sizeof(DMConnections) * width * height);
 	}
 	
 	return self;
+}
+
++ (id) map
+{
+	return [[[DMMap alloc] init] autorelease];
 }
 
 - (id) initWithContentsOfFile: (NSString *) filename
