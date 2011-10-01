@@ -29,6 +29,7 @@
 		5F162E0B14090541008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
 		5F4A4C7A141CCECF0092D559 /* DKRoomZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */; };
+		5FDD8EBA14375A8300E4316B /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
 		5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */; };
 		5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF93263140986DF003E8518 /* DMMap(Saving).m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -397,6 +398,7 @@
 				5F162D601408F9BE008869BB /* DungeonView.m in Sources */,
 				5F162D631408F9CE008869BB /* DMDefinitions.m in Sources */,
 				5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */,
+				5FDD8EBA14375A8300E4316B /* DMNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
