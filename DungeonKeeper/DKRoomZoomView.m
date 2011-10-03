@@ -42,7 +42,7 @@
 	[self.background drawInRect: self.frame fromRect: self.backgroundClipRect operation: NSCompositeSourceOver fraction: 1];
 	
 	// Draw connection indicators
-	[self drawConnectionPointsInRect: self.frame];
+	// [self drawConnectionPointsInRect: self.frame];
 	
 	// Draw existing connections
 	[self drawConnectionsInRect: self.frame];
@@ -67,66 +67,69 @@
 // - (void) drawConnections: (DMConnections) connections inRect: (NSRect) rect
 - (void) drawConnectionsInRect: (NSRect) rect
 {
-	NSPoint 
-	north = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y + rect.size.height),
-	east = NSMakePoint(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height * 0.5f),
-	south = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y),
-	west = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height * 0.5f),
-	middle = NSMakePoint(rect.origin.x + rect.size.width * 0.5f, rect.origin.y + rect.size.height * 0.5f);
+	NSImage 
+		*cnb = [NSImage imageNamed: @"ConnectionsNorthBackground"],
+		*csb = [NSImage imageNamed: @"ConnectionsSouthBackground"],
+		*ceb = [NSImage imageNamed: @"ConnectionsEastBackground"],
+		*cwb = [NSImage imageNamed: @"ConnectionsWestBackground"];
+	NSSize imageSize = cnb.size, frameSize = self.frame.size;
+	NSPoint
+		north = NSMakePoint((frameSize.width - imageSize.width) * 0.5f, frameSize.height - imageSize.height),
+		south = NSMakePoint((frameSize.width - imageSize.width) * 0.5f, 0),
+		east = NSMakePoint(frameSize.width - imageSize.width, (frameSize.height - imageSize.height) * 0.5f),
+		west = NSMakePoint(0, (frameSize.height - imageSize.height) * 0.5f);
 	
-	DMExit e = 0;
+	// North
+	[cnb drawAtPoint: north fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
-	// Connections from northern entrance
-	e = connections.north;
+	for (NSInteger i = 0; i < 4; ++i) {
+		DMExit e = 1 << i;
+		
+		if (connections.north & e) {
+			NSImage *overlay = [NSImage imageNamed: [NSString stringWithFormat: @"ConnectionsNorth%d", i]];
+			
+			[overlay drawAtPoint: north fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+		}
+	}
 	
-	if (e & DMExitEast)
-		[self drawConnectionFrom: north over: middle to: east];
-	if (e & DMExitSouth)
-		[self drawConnectionFrom: north over: middle to: south];
-	if (e & DMExitWest)
-		[self drawConnectionFrom: north over: middle to: west];
+	// South
+	[csb drawAtPoint: south fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
-	// Connections from eastern entrance
-	e = connections.east;
+	for (NSInteger i = 0; i < 4; ++i) {
+		DMExit e = 1 << i;
+		
+		if (connections.south & e) {
+			NSImage *overlay = [NSImage imageNamed: [NSString stringWithFormat: @"ConnectionsSouth%d", i]];
+			
+			[overlay drawAtPoint: south fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+		}
+	}
 	
-	if (e & DMExitNorth)
-		[self drawConnectionFrom: east over: middle to: north];
-	if (e & DMExitSouth)
-		[self drawConnectionFrom: east over: middle to: south];
-	if (e & DMExitWest)
-		[self drawConnectionFrom: east over: middle to: west];
+	// East
+	[ceb drawAtPoint: east fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
-	// Connections from southern entrance
-	e = connections.south;
+	for (NSInteger i = 0; i < 4; ++i) {
+		DMExit e = 1 << i;
+		
+		if (connections.east & e) {
+			NSImage *overlay = [NSImage imageNamed: [NSString stringWithFormat: @"ConnectionsEast%d", i]];
+			
+			[overlay drawAtPoint: east fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+		}
+	}
 	
-	if (e & DMExitNorth)
-		[self drawConnectionFrom: south over: middle to: north];
-	if (e & DMExitEast)
-		[self drawConnectionFrom: south over: middle to: east];
-	if (e & DMExitWest)
-		[self drawConnectionFrom: south over: middle to: west];
+	// West
+	[cwb drawAtPoint: west fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
-	// Connections from western entrance
-	e = connections.west;
-	
-	if (e & DMExitNorth)
-		[self drawConnectionFrom: west over: middle to: north];
-	if (e & DMExitEast)
-		[self drawConnectionFrom: west over: middle to: east];
-	if (e & DMExitSouth)
-		[self drawConnectionFrom: west over: middle to: south];
-	
-	// Teleporter connection
-//	if (connections.teleportTarget >= 0) {
-//		NSPoint teleporterEntrance = NSMakePoint(rect.origin.x + 0.5f * rect.size.width, rect.origin.y + 0.5f * rect.size.height);
-//		
-//		NSPoint targetRoom = NSMakePoint(connections.teleportTarget % self.mapWidth, connections.teleportTarget / self.mapWidth);
-//		NSRect targetRoomRect = [self rectForRoom: targetRoom];
-//		NSPoint teleporterExit =
-//		NSMakePoint(targetRoomRect.origin.x + targetRoomRect.size.width * 0.5f, targetRoomRect.origin.y + targetRoomRect.size.height * 0.5f);
-//		
-//		[self drawTeleportFrom: teleporterEntrance to: teleporterExit];
-//	}
+	for (NSInteger i = 0; i < 4; ++i) {
+		DMExit e = 1 << i;
+		
+		if (connections.west & e) {
+			NSImage *overlay = [NSImage imageNamed: [NSString stringWithFormat: @"ConnectionsWest%d", i]];
+			
+			[overlay drawAtPoint: west fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+		}
+	}
 }
 
 - (void) drawConnectionFrom: (NSPoint) p over: (NSPoint) middle to: (NSPoint) q
@@ -276,6 +279,11 @@
 	[self exitHasBeenSelected: DMExitSouth];
 }
 
+- (void) deleteBackward:(id)sender
+{
+	[self clearConnections];
+}
+
 #pragma mark -
 #pragma mark Making and Breaking Connections
 
@@ -300,6 +308,11 @@
 	}
 	
 	[self setNeedsDisplay: YES];
+}
+
+- (void) clearConnections
+{
+	[delegate roomZoomClearConnections: self];
 }
 
 @end

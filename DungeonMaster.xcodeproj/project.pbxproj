@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0213CD1437B3F900ABB19D /* ConnectionsSouthBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0213CC1437B3F900ABB19D /* ConnectionsSouthBackground.png */; };
+		5F0213D11437B46A00ABB19D /* ConnectionsEastBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0213CF1437B46A00ABB19D /* ConnectionsEastBackground.png */; };
+		5F0213D21437B46A00ABB19D /* ConnectionsWestBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0213D01437B46A00ABB19D /* ConnectionsWestBackground.png */; };
 		5F162D4B1408F82D008869BB /* DungeonMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F162D4A1408F82D008869BB /* DungeonMaster.icns */; };
 		5F162D5A1408F9BE008869BB /* DMApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D4E1408F9BE008869BB /* DMApplicationDelegate.m */; };
 		5F162D5C1408F9BE008869BB /* DMMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D511408F9BE008869BB /* DMMap.m */; };
@@ -29,6 +32,19 @@
 		5F162E0B14090541008869BB /* DMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D621408F9CE008869BB /* DMDefinitions.m */; };
 		5F1A430413FD632B0027508F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1A430313FD632B0027508F /* Cocoa.framework */; };
 		5F4A4C7A141CCECF0092D559 /* DKRoomZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */; };
+		5F684D081439DB4700DBB32E /* ConnectionsSouth3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D051439DB4700DBB32E /* ConnectionsSouth3.png */; };
+		5F684D091439DB4700DBB32E /* ConnectionsSouth2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D061439DB4700DBB32E /* ConnectionsSouth2.png */; };
+		5F684D0A1439DB4700DBB32E /* ConnectionsSouth0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D071439DB4700DBB32E /* ConnectionsSouth0.png */; };
+		5F684D0F1439DB5000DBB32E /* ConnectionsNorth3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */; };
+		5F684D101439DB5000DBB32E /* ConnectionsNorth2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */; };
+		5F684D111439DB5000DBB32E /* ConnectionsNorth1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */; };
+		5F7081E0143887840029E08C /* ConnectionsEast2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DD143887840029E08C /* ConnectionsEast2.png */; };
+		5F7081E1143887840029E08C /* ConnectionsEast1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DE143887840029E08C /* ConnectionsEast1.png */; };
+		5F7081E2143887840029E08C /* ConnectionsEast0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DF143887840029E08C /* ConnectionsEast0.png */; };
+		5F7081E714388BF10029E08C /* ConnectionsWest3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081E414388BF10029E08C /* ConnectionsWest3.png */; };
+		5F7081E814388BF10029E08C /* ConnectionsWest1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081E514388BF10029E08C /* ConnectionsWest1.png */; };
+		5F7081E914388BF10029E08C /* ConnectionsWest0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081E614388BF10029E08C /* ConnectionsWest0.png */; };
+		5FA5D96B1437ACB200E428D0 /* ConnectionsNorthBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */; };
 		5FDD8EBA14375A8300E4316B /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
 		5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */; };
 		5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF93263140986DF003E8518 /* DMMap(Saving).m */; };
@@ -42,6 +58,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* DungeonMaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonMaster_Prefix.pch; sourceTree = "<group>"; };
+		5F0213CC1437B3F900ABB19D /* ConnectionsSouthBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsSouthBackground.png; path = Resources/Images/ConnectionsSouthBackground.png; sourceTree = SOURCE_ROOT; };
+		5F0213CF1437B46A00ABB19D /* ConnectionsEastBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEastBackground.png; path = Resources/Images/ConnectionsEastBackground.png; sourceTree = SOURCE_ROOT; };
+		5F0213D01437B46A00ABB19D /* ConnectionsWestBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWestBackground.png; path = Resources/Images/ConnectionsWestBackground.png; sourceTree = SOURCE_ROOT; };
 		5F0690CF140C2782007BCE3C /* KeyCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyCode.h; sourceTree = "<group>"; };
 		5F162D4A1408F82D008869BB /* DungeonMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DungeonMaster.icns; sourceTree = "<group>"; };
 		5F162D4D1408F9BE008869BB /* DMApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMApplicationDelegate.h; path = Source/DMApplicationDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +98,19 @@
 		5F4A4C78141CCECF0092D559 /* DKRoomZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRoomZoomView.h; sourceTree = "<group>"; };
 		5F4A4C79141CCECF0092D559 /* DKRoomZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRoomZoomView.m; sourceTree = "<group>"; };
 		5F67805C0B96D9C700BD4E8D /* Map file format.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Map file format.txt"; sourceTree = "<group>"; };
+		5F684D051439DB4700DBB32E /* ConnectionsSouth3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsSouth3.png; path = Resources/Images/ConnectionsSouth3.png; sourceTree = SOURCE_ROOT; };
+		5F684D061439DB4700DBB32E /* ConnectionsSouth2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsSouth2.png; path = Resources/Images/ConnectionsSouth2.png; sourceTree = SOURCE_ROOT; };
+		5F684D071439DB4700DBB32E /* ConnectionsSouth0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsSouth0.png; path = Resources/Images/ConnectionsSouth0.png; sourceTree = SOURCE_ROOT; };
+		5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth3.png; path = Resources/Images/ConnectionsNorth3.png; sourceTree = SOURCE_ROOT; };
+		5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth2.png; path = Resources/Images/ConnectionsNorth2.png; sourceTree = SOURCE_ROOT; };
+		5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth1.png; path = Resources/Images/ConnectionsNorth1.png; sourceTree = SOURCE_ROOT; };
+		5F7081DD143887840029E08C /* ConnectionsEast2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast2.png; path = Resources/Images/ConnectionsEast2.png; sourceTree = SOURCE_ROOT; };
+		5F7081DE143887840029E08C /* ConnectionsEast1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast1.png; path = Resources/Images/ConnectionsEast1.png; sourceTree = SOURCE_ROOT; };
+		5F7081DF143887840029E08C /* ConnectionsEast0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast0.png; path = Resources/Images/ConnectionsEast0.png; sourceTree = SOURCE_ROOT; };
+		5F7081E414388BF10029E08C /* ConnectionsWest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWest3.png; path = Resources/Images/ConnectionsWest3.png; sourceTree = SOURCE_ROOT; };
+		5F7081E514388BF10029E08C /* ConnectionsWest1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWest1.png; path = Resources/Images/ConnectionsWest1.png; sourceTree = SOURCE_ROOT; };
+		5F7081E614388BF10029E08C /* ConnectionsWest0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWest0.png; path = Resources/Images/ConnectionsWest0.png; sourceTree = SOURCE_ROOT; };
+		5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorthBackground.png; path = Resources/Images/ConnectionsNorthBackground.png; sourceTree = SOURCE_ROOT; };
 		5FE2A57614122F7200B0709E /* DKChangeMapParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKChangeMapParameters.h; sourceTree = "<group>"; };
 		5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKChangeMapParameters.m; sourceTree = "<group>"; };
 		5FF93262140986DF003E8518 /* DMMap(Saving).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DMMap(Saving).h"; sourceTree = "<group>"; };
@@ -203,6 +235,7 @@
 		5F0690CC140C23B9007BCE3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FA5D9681437AC8100E428D0 /* Images */,
 				5F162DF9140900AE008869BB /* DKDocument.xib */,
 				5F162DFC140900AE008869BB /* MainMenu.xib */,
 			);
@@ -250,6 +283,29 @@
 				5F67805C0B96D9C700BD4E8D /* Map file format.txt */,
 			);
 			name = Notes;
+			sourceTree = "<group>";
+		};
+		5FA5D9681437AC8100E428D0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5F0213CF1437B46A00ABB19D /* ConnectionsEastBackground.png */,
+				5F7081DF143887840029E08C /* ConnectionsEast0.png */,
+				5F7081DE143887840029E08C /* ConnectionsEast1.png */,
+				5F7081DD143887840029E08C /* ConnectionsEast2.png */,
+				5F0213D01437B46A00ABB19D /* ConnectionsWestBackground.png */,
+				5F7081E614388BF10029E08C /* ConnectionsWest0.png */,
+				5F7081E514388BF10029E08C /* ConnectionsWest1.png */,
+				5F7081E414388BF10029E08C /* ConnectionsWest3.png */,
+				5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */,
+				5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */,
+				5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */,
+				5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */,
+				5F0213CC1437B3F900ABB19D /* ConnectionsSouthBackground.png */,
+				5F684D051439DB4700DBB32E /* ConnectionsSouth3.png */,
+				5F684D061439DB4700DBB32E /* ConnectionsSouth2.png */,
+				5F684D071439DB4700DBB32E /* ConnectionsSouth0.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5FE2A57B141232B100B0709E /* Commands */ = {
@@ -353,6 +409,22 @@
 				5F162DF5140900AE008869BB /* Credits.rtf in Resources */,
 				5F162DFB140900AE008869BB /* DKDocument.xib in Resources */,
 				5F162DFE140900AE008869BB /* MainMenu.xib in Resources */,
+				5FA5D96B1437ACB200E428D0 /* ConnectionsNorthBackground.png in Resources */,
+				5F0213CD1437B3F900ABB19D /* ConnectionsSouthBackground.png in Resources */,
+				5F0213D11437B46A00ABB19D /* ConnectionsEastBackground.png in Resources */,
+				5F0213D21437B46A00ABB19D /* ConnectionsWestBackground.png in Resources */,
+				5F7081E0143887840029E08C /* ConnectionsEast2.png in Resources */,
+				5F7081E1143887840029E08C /* ConnectionsEast1.png in Resources */,
+				5F7081E2143887840029E08C /* ConnectionsEast0.png in Resources */,
+				5F7081E714388BF10029E08C /* ConnectionsWest3.png in Resources */,
+				5F7081E814388BF10029E08C /* ConnectionsWest1.png in Resources */,
+				5F7081E914388BF10029E08C /* ConnectionsWest0.png in Resources */,
+				5F684D081439DB4700DBB32E /* ConnectionsSouth3.png in Resources */,
+				5F684D091439DB4700DBB32E /* ConnectionsSouth2.png in Resources */,
+				5F684D0A1439DB4700DBB32E /* ConnectionsSouth0.png in Resources */,
+				5F684D0F1439DB5000DBB32E /* ConnectionsNorth3.png in Resources */,
+				5F684D101439DB5000DBB32E /* ConnectionsNorth2.png in Resources */,
+				5F684D111439DB5000DBB32E /* ConnectionsNorth1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

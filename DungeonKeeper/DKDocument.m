@@ -269,6 +269,20 @@
 	[roomZoom setNeedsDisplay: YES];
 }
 
+- (void) roomZoomClearConnections: (DKRoomZoomView *) rzv
+{
+	NSPoint selectedRoom = editor.selectedRoom;
+//	DMConnections connections = [self.map connectionsAtX: selectedRoom.x y: selectedRoom.y];
+	DMConnections connections = DMMakeEmptyConnections();
+	
+	[self.map setConnections: connections atX: selectedRoom.x y: selectedRoom.y];
+	
+	roomZoom.connections = connections;
+	
+	[editor setNeedsDisplay: YES];
+	[roomZoom setNeedsDisplay: YES];
+}
+
 #pragma mark -
 #pragma mark Display Options
 - (BOOL) drawConnectionIndicators
