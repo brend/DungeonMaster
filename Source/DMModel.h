@@ -8,6 +8,8 @@
 	NSArray *names, *files, *maps;
 	id selectedMap;
 	
+	BOOL showRoomIndices;
+	
 	IBOutlet DungeonView *dungeonView;
 }
 
@@ -22,5 +24,7 @@
 
 - (id) selectedMap;
 - (void) setSelectedMap: (id) map;
+
+@property BOOL showRoomIndices;
 
 @end

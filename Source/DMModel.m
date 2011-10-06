@@ -99,4 +99,17 @@
 	[dungeonView loadMap: selectedMap];
 }
 
+- (BOOL) showRoomIndices
+{
+	return showRoomIndices;
+}
+
+- (void) setShowRoomIndices:(BOOL)flag
+{
+	[self willChangeValueForKey: @"showRoomIndices"];
+	showRoomIndices = flag;
+	[self didChangeValueForKey: @"showRoomIndices"];
+	dungeonView.showRoomIndices = showRoomIndices;
+}
+
 @end

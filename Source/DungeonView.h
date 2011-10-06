@@ -11,6 +11,8 @@
 	
 	NSSize caretSize;
 	NSImage *background;
+	
+	BOOL showRoomIndices;
 }
 
 - (void) loadMap: (NSString *) mapName;
@@ -21,5 +23,7 @@
 - (void) setStrokeForPath: (NSBezierPath **) path dotted: (BOOL) d;
 - (NSColor *) walkColor;
 - (NSColor *) teleportColor;
+
+@property BOOL showRoomIndices;
 
 @end
