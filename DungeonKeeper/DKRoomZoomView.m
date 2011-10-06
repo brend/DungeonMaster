@@ -92,6 +92,12 @@
 		}
 	}
 	
+	if (connectionStart == DMExitNorth) {
+		NSImage *highlight = [NSImage imageNamed: @"ConnectionsNorthHighlight"];
+		
+		[highlight drawAtPoint: north fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+	}
+	
 	// South
 	[csb drawAtPoint: south fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
@@ -103,6 +109,12 @@
 			
 			[overlay drawAtPoint: south fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 		}
+	}
+	
+	if (connectionStart == DMExitSouth) {
+		NSImage *highlight = [NSImage imageNamed: @"ConnectionsSouthHighlight"];
+		
+		[highlight drawAtPoint: south fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	}
 	
 	// East
@@ -118,6 +130,12 @@
 		}
 	}
 	
+	if (connectionStart == DMExitEast) {
+		NSImage *highlight = [NSImage imageNamed: @"ConnectionsEastHighlight"];
+		
+		[highlight drawAtPoint: east fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
+	}
+	
 	// West
 	[cwb drawAtPoint: west fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	
@@ -129,6 +147,12 @@
 			
 			[overlay drawAtPoint: west fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 		}
+	}
+	
+	if (connectionStart == DMExitWest) {
+		NSImage *highlight = [NSImage imageNamed: @"ConnectionsWestHighlight"];
+		
+		[highlight drawAtPoint: west fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1];
 	}
 }
 

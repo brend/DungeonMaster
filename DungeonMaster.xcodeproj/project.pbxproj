@@ -38,6 +38,10 @@
 		5F684D0F1439DB5000DBB32E /* ConnectionsNorth3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */; };
 		5F684D101439DB5000DBB32E /* ConnectionsNorth2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */; };
 		5F684D111439DB5000DBB32E /* ConnectionsNorth1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */; };
+		5F684D131439DF2F00DBB32E /* ConnectionsNorthHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D121439DF2F00DBB32E /* ConnectionsNorthHighlight.png */; };
+		5F684D151439E21F00DBB32E /* ConnectionsEastHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D141439E21F00DBB32E /* ConnectionsEastHighlight.png */; };
+		5F684D171439E23800DBB32E /* ConnectionsSouthHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D161439E23800DBB32E /* ConnectionsSouthHighlight.png */; };
+		5F684D191439E24800DBB32E /* ConnectionsWestHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F684D181439E24800DBB32E /* ConnectionsWestHighlight.png */; };
 		5F7081E0143887840029E08C /* ConnectionsEast2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DD143887840029E08C /* ConnectionsEast2.png */; };
 		5F7081E1143887840029E08C /* ConnectionsEast1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DE143887840029E08C /* ConnectionsEast1.png */; };
 		5F7081E2143887840029E08C /* ConnectionsEast0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081DF143887840029E08C /* ConnectionsEast0.png */; };
@@ -104,6 +108,10 @@
 		5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth3.png; path = Resources/Images/ConnectionsNorth3.png; sourceTree = SOURCE_ROOT; };
 		5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth2.png; path = Resources/Images/ConnectionsNorth2.png; sourceTree = SOURCE_ROOT; };
 		5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorth1.png; path = Resources/Images/ConnectionsNorth1.png; sourceTree = SOURCE_ROOT; };
+		5F684D121439DF2F00DBB32E /* ConnectionsNorthHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorthHighlight.png; path = Resources/Images/ConnectionsNorthHighlight.png; sourceTree = SOURCE_ROOT; };
+		5F684D141439E21F00DBB32E /* ConnectionsEastHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEastHighlight.png; path = Resources/Images/ConnectionsEastHighlight.png; sourceTree = SOURCE_ROOT; };
+		5F684D161439E23800DBB32E /* ConnectionsSouthHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsSouthHighlight.png; path = Resources/Images/ConnectionsSouthHighlight.png; sourceTree = SOURCE_ROOT; };
+		5F684D181439E24800DBB32E /* ConnectionsWestHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWestHighlight.png; path = Resources/Images/ConnectionsWestHighlight.png; sourceTree = SOURCE_ROOT; };
 		5F7081DD143887840029E08C /* ConnectionsEast2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast2.png; path = Resources/Images/ConnectionsEast2.png; sourceTree = SOURCE_ROOT; };
 		5F7081DE143887840029E08C /* ConnectionsEast1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast1.png; path = Resources/Images/ConnectionsEast1.png; sourceTree = SOURCE_ROOT; };
 		5F7081DF143887840029E08C /* ConnectionsEast0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsEast0.png; path = Resources/Images/ConnectionsEast0.png; sourceTree = SOURCE_ROOT; };
@@ -289,18 +297,22 @@
 			isa = PBXGroup;
 			children = (
 				5F0213CF1437B46A00ABB19D /* ConnectionsEastBackground.png */,
+				5F684D141439E21F00DBB32E /* ConnectionsEastHighlight.png */,
 				5F7081DF143887840029E08C /* ConnectionsEast0.png */,
 				5F7081DE143887840029E08C /* ConnectionsEast1.png */,
 				5F7081DD143887840029E08C /* ConnectionsEast2.png */,
 				5F0213D01437B46A00ABB19D /* ConnectionsWestBackground.png */,
+				5F684D181439E24800DBB32E /* ConnectionsWestHighlight.png */,
 				5F7081E614388BF10029E08C /* ConnectionsWest0.png */,
 				5F7081E514388BF10029E08C /* ConnectionsWest1.png */,
 				5F7081E414388BF10029E08C /* ConnectionsWest3.png */,
 				5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */,
+				5F684D121439DF2F00DBB32E /* ConnectionsNorthHighlight.png */,
 				5F684D0C1439DB5000DBB32E /* ConnectionsNorth3.png */,
 				5F684D0D1439DB5000DBB32E /* ConnectionsNorth2.png */,
 				5F684D0E1439DB5000DBB32E /* ConnectionsNorth1.png */,
 				5F0213CC1437B3F900ABB19D /* ConnectionsSouthBackground.png */,
+				5F684D161439E23800DBB32E /* ConnectionsSouthHighlight.png */,
 				5F684D051439DB4700DBB32E /* ConnectionsSouth3.png */,
 				5F684D061439DB4700DBB32E /* ConnectionsSouth2.png */,
 				5F684D071439DB4700DBB32E /* ConnectionsSouth0.png */,
@@ -425,6 +437,10 @@
 				5F684D0F1439DB5000DBB32E /* ConnectionsNorth3.png in Resources */,
 				5F684D101439DB5000DBB32E /* ConnectionsNorth2.png in Resources */,
 				5F684D111439DB5000DBB32E /* ConnectionsNorth1.png in Resources */,
+				5F684D131439DF2F00DBB32E /* ConnectionsNorthHighlight.png in Resources */,
+				5F684D151439E21F00DBB32E /* ConnectionsEastHighlight.png in Resources */,
+				5F684D171439E23800DBB32E /* ConnectionsSouthHighlight.png in Resources */,
+				5F684D191439E24800DBB32E /* ConnectionsWestHighlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
