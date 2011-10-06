@@ -49,6 +49,7 @@
 		5F7081E814388BF10029E08C /* ConnectionsWest1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081E514388BF10029E08C /* ConnectionsWest1.png */; };
 		5F7081E914388BF10029E08C /* ConnectionsWest0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7081E614388BF10029E08C /* ConnectionsWest0.png */; };
 		5FA5D96B1437ACB200E428D0 /* ConnectionsNorthBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */; };
+		5FD6966A143E2DCD001D11E6 /* DungeonKeeper.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5FD69669143E2DCD001D11E6 /* DungeonKeeper.icns */; };
 		5FDD8EBA14375A8300E4316B /* DMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F162D551408F9BE008869BB /* DMNode.m */; };
 		5FE2A57A141231BB00B0709E /* DKChangeMapParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */; };
 		5FF93264140986DF003E8518 /* DMMap(Saving).m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF93263140986DF003E8518 /* DMMap(Saving).m */; };
@@ -119,6 +120,7 @@
 		5F7081E514388BF10029E08C /* ConnectionsWest1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWest1.png; path = Resources/Images/ConnectionsWest1.png; sourceTree = SOURCE_ROOT; };
 		5F7081E614388BF10029E08C /* ConnectionsWest0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsWest0.png; path = Resources/Images/ConnectionsWest0.png; sourceTree = SOURCE_ROOT; };
 		5FA5D96A1437ACB200E428D0 /* ConnectionsNorthBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConnectionsNorthBackground.png; path = Resources/Images/ConnectionsNorthBackground.png; sourceTree = SOURCE_ROOT; };
+		5FD69669143E2DCD001D11E6 /* DungeonKeeper.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DungeonKeeper.icns; sourceTree = SOURCE_ROOT; };
 		5FE2A57614122F7200B0709E /* DKChangeMapParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKChangeMapParameters.h; sourceTree = "<group>"; };
 		5FE2A57714122F7200B0709E /* DKChangeMapParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKChangeMapParameters.m; sourceTree = "<group>"; };
 		5FF93262140986DF003E8518 /* DMMap(Saving).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DMMap(Saving).h"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		5F0690CC140C23B9007BCE3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FD69669143E2DCD001D11E6 /* DungeonKeeper.icns */,
 				5FA5D9681437AC8100E428D0 /* Images */,
 				5F162DF9140900AE008869BB /* DKDocument.xib */,
 				5F162DFC140900AE008869BB /* MainMenu.xib */,
@@ -441,6 +444,7 @@
 				5F684D151439E21F00DBB32E /* ConnectionsEastHighlight.png in Resources */,
 				5F684D171439E23800DBB32E /* ConnectionsSouthHighlight.png in Resources */,
 				5F684D191439E24800DBB32E /* ConnectionsWestHighlight.png in Resources */,
+				5FD6966A143E2DCD001D11E6 /* DungeonKeeper.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
