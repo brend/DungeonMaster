@@ -18,7 +18,7 @@
 {
 	if (self = [super init]) {
 		width = height = 1;
-		rooms = (DMConnections *) malloc(sizeof(DMConnections) * width * height);
+		rooms = (DMConnections *) malloc(sizeof(DMConnections));
 	}
 	
 	return self;
