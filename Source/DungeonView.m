@@ -121,6 +121,13 @@
 	[self drawCaret: NSMakeRect(start.x * s.width, start.y * s.height, s.width, s.height) color: [NSColor colorWithDeviceRed: 0 green: 1 blue: 0 alpha: 0.3]];
 	[self drawCaret: NSMakeRect(goal.x * s.width, goal.y * s.height, s.width, s.height) color: [NSColor colorWithDeviceRed: 1 green: 0 blue: 1 alpha: 0.3]];
 	
+	// Draw room indices
+	for (NSInteger i = 0; i < map.width * map.height; ++i) {
+		// [self drawCaret: NSMakeRect(s.width * (i % map.width), s.height * (i / map.width), s.width, s.height) color: yeller];
+		[[NSString stringWithFormat: @"%i (%i, %i)", i, i % map.width, i / map.width] drawAtPoint: NSMakePoint(s.width * (i % map.width), s.height * (i / map.width))
+											withAttributes: [NSDictionary dictionaryWithObject: [NSColor orangeColor] forKey: NSForegroundColorAttributeName]];
+	}
+	
 	// Draw path from start to goal, if any
 	if (thePlan != nil) {
 		NSEnumerator *e = [[thePlan path] objectEnumerator];
