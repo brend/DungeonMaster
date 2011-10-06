@@ -236,10 +236,10 @@
 	}
 }
 
-//- (void)keyDown:(NSEvent *)theEvent
-//{
-//	
-//}
+- (void)flagsChanged:(NSEvent *)theEvent
+{
+	isShiftPressed = (theEvent.modifierFlags & NSShiftKeyMask) > 0;
+}
 
 - (DMExit) connectionPointFromPoint:(NSPoint)p
 {
@@ -313,7 +313,9 @@
 
 - (void) makeConnection
 {
-	[delegate roomZoom: self toggleConnectionFromExit: connectionStart toExit: connectionEnd];
+	[delegate roomZoom: self toggleConnectionFromExit: connectionStart
+				toExit: connectionEnd
+		 bidirectional: !(isShiftPressed)];
 }
 
 - (void) exitHasBeenSelected: (DMExit) selectedExit

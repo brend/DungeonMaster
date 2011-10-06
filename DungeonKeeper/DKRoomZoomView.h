@@ -11,7 +11,7 @@
 @class DKRoomZoomView;
 
 @protocol DKRoomZoomViewDelegate <NSObject>
-- (void) roomZoom: (DKRoomZoomView *) rzv toggleConnectionFromExit: (DMExit) start toExit: (DMExit) end;
+- (void) roomZoom: (DKRoomZoomView *) rzv toggleConnectionFromExit: (DMExit) start toExit: (DMExit) end bidirectional: (BOOL) bidirectional;
 - (void) roomZoomClearConnections: (DKRoomZoomView *) rzv;
 @end
 
@@ -25,6 +25,7 @@
 	DMExit connectionStart, connectionEnd;
 	
 	NSPoint currentMousePosition;
+	BOOL isShiftPressed;
 	
 	IBOutlet id<DKRoomZoomViewDelegate> delegate;
 }

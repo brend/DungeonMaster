@@ -237,7 +237,7 @@
 
 #pragma mark -
 #pragma mark Room Zoom View Delegate
-- (void) roomZoom:(DKRoomZoomView *)rzv toggleConnectionFromExit:(DMExit)start toExit:(DMExit)end
+- (void) roomZoom:(DKRoomZoomView *)rzv toggleConnectionFromExit:(DMExit)start toExit:(DMExit)end bidirectional: (BOOL) bidirectional
 {
 	// TODO: Make this undo-able
 	NSPoint selectedRoom = editor.selectedRoom;
@@ -259,6 +259,26 @@
 		default:
 			NSLog(@"Unexpected connection start: %d", start);
 			break;
+	}
+	
+	if (bidirectional) {
+		switch (end) {
+			case DMExitNorth:
+				connections.north = connections.north ^ start;
+				break;
+			case DMExitEast:
+				connections.east = connections.east ^ start;
+				break;
+			case DMExitSouth:
+				connections.south = connections.south ^ start;
+				break;
+			case DMExitWest:
+				connections.west = connections.west ^ start;
+				break;
+			default:
+				NSLog(@"Unexpected connection start: %d", end);
+				break;
+		}		
 	}
 	
 	[self.map setConnections: connections atX: selectedRoom.x y: selectedRoom.y];
