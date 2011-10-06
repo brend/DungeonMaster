@@ -17,8 +17,11 @@
 - (id) init
 {
 	if (self = [super init]) {
+		size_t roomsSize = sizeof(DMConnections);
+		
 		width = height = 1;
-		rooms = (DMConnections *) malloc(sizeof(DMConnections));
+		rooms = (DMConnections *) malloc(roomsSize);
+		rooms[0] = DMMakeEmptyConnections();
 	}
 	
 	return self;
