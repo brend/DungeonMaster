@@ -308,6 +308,15 @@
 	[self clearConnections];
 }
 
+- (void) keyDown:(NSEvent *)theEvent
+{
+	if (theEvent.keyCode == 36) {
+		[self switchToMap];
+	} else {
+		[self interpretKeyEvents: [NSArray arrayWithObject: theEvent]];
+	}
+}
+
 #pragma mark -
 #pragma mark Making and Breaking Connections
 
@@ -339,6 +348,15 @@
 - (void) clearConnections
 {
 	[delegate roomZoomClearConnections: self];
+}
+
+#pragma mark -
+
+#pragma mark Switching Views
+
+- (void) switchToMap
+{
+	[mapWindow makeKeyAndOrderFront: self];
 }
 
 @end

@@ -56,7 +56,7 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{94, 86}</string>
 				<object class="NSView" key="NSWindowView" id="568628114">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -75,6 +75,7 @@
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{0, -73}, {507, 413}}</string>
 											<reference key="NSSuperview" ref="264408228"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="571121880"/>
 											<string key="NSReuseIdentifierKey">_NS:499</string>
 											<string key="NSClassName">DKMapEditor</string>
@@ -82,6 +83,7 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {492, 340}}</string>
 									<reference key="NSSuperview" ref="824338435"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="225675761"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<reference key="NSDocView" ref="225675761"/>
@@ -101,6 +103,7 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{493, 1}, {15, 340}}</string>
 									<reference key="NSSuperview" ref="824338435"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="598114229"/>
 									<string key="NSReuseIdentifierKey">_NS:26</string>
 									<bool key="NSEnabled">YES</bool>
@@ -113,6 +116,7 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{1, 341}, {492, 15}}</string>
 									<reference key="NSSuperview" ref="824338435"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:30</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -123,6 +127,7 @@
 							</object>
 							<string key="NSFrame">{{-1, -1}, {509, 357}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="264408228"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133362</int>
@@ -135,6 +140,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{125, 368}, {19, 27}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="122818189"/>
 							<string key="NSReuseIdentifierKey">_NS:3977</string>
 							<bool key="NSEnabled">YES</bool>
@@ -155,6 +161,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{271, 368}, {19, 27}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="456496706"/>
 							<string key="NSReuseIdentifierKey">_NS:3977</string>
 							<bool key="NSEnabled">YES</bool>
@@ -175,6 +182,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 374}, {66, 17}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1045580457"/>
 							<string key="NSReuseIdentifierKey">_NS:3936</string>
 							<bool key="NSEnabled">YES</bool>
@@ -206,6 +214,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{164, 374}, {105, 17}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="624444514"/>
 							<string key="NSReuseIdentifierKey">_NS:3936</string>
 							<bool key="NSEnabled">YES</bool>
@@ -225,6 +234,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{328, 373}, {161, 18}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="824338435"/>
 							<string key="NSReuseIdentifierKey">_NS:239</string>
 							<bool key="NSEnabled">YES</bool>
@@ -252,6 +262,8 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{507, 413}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="165159666"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
@@ -285,7 +297,6 @@
 							<string key="NSFrameSize">{290, 253}</string>
 							<reference key="NSSuperview" ref="656271953"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:499</string>
 							<string key="NSClassName">DKRoomZoomView</string>
 						</object>
@@ -463,6 +474,22 @@
 						<reference key="destination" ref="731087264"/>
 					</object>
 					<int key="connectionID">100061</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">mapWindow</string>
+						<reference key="source" ref="616744310"/>
+						<reference key="destination" ref="275939982"/>
+					</object>
+					<int key="connectionID">100062</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">zoomWindow</string>
+						<reference key="source" ref="225675761"/>
+						<reference key="destination" ref="731087264"/>
+					</object>
+					<int key="connectionID">100063</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -714,7 +741,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100061</int>
+			<int key="maxID">100063</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -775,11 +802,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>dataSource</string>
 							<string>delegate</string>
+							<string>zoomWindow</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
 							<string>id</string>
+							<string>NSWindow</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -788,6 +817,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>dataSource</string>
 							<string>delegate</string>
+							<string>zoomWindow</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -798,6 +828,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">delegate</string>
 								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">zoomWindow</string>
+								<string key="candidateClassName">NSWindow</string>
 							</object>
 						</object>
 					</object>
@@ -810,14 +844,35 @@
 					<string key="className">DKRoomZoomView</string>
 					<string key="superclassName">NSView</string>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>delegate</string>
+							<string>mapWindow</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>NSWindow</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>delegate</string>
+							<string>mapWindow</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">delegate</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mapWindow</string>
+								<string key="candidateClassName">NSWindow</string>
+							</object>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

@@ -28,6 +28,7 @@
 	BOOL isShiftPressed;
 	
 	IBOutlet id<DKRoomZoomViewDelegate> delegate;
+	IBOutlet NSWindow *mapWindow;
 }
 
 @property (retain) NSImage *background;
@@ -40,5 +41,7 @@
 
 - (void) exitHasBeenSelected: (DMExit) e;
 - (void) clearConnections;
+
+- (void) switchToMap;
 
 @end

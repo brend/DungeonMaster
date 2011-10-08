@@ -29,6 +29,7 @@
 	
 	IBOutlet id<DKMapEditorDelegate> delegate;
 	IBOutlet id<DKMapEditorDataSource> dataSource;
+	IBOutlet NSWindow *zoomWindow;
 }
 
 @property (retain) NSImage *background;
@@ -38,5 +39,10 @@
 @property (readonly) int mapWidth, mapHeight;
 
 @property (assign) NSPoint selectedRoom;
+
+#pragma mark -
+#pragma mark Switching Views
+
+- (void) switchToZoom;
 
 @end

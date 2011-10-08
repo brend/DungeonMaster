@@ -335,9 +335,20 @@
 			if (roomCoordinates.y > 0)
 				roomCoordinates.y -= 1;
 			break;
+		case kVK_Return:
+			[self switchToZoom];
+			break;
 	}
 	
 	[delegate mapEditor: self selectRoom: roomCoordinates];
+}
+
+#pragma mark -
+#pragma mark Switching Views
+
+- (void) switchToZoom
+{
+	[zoomWindow makeKeyAndOrderFront: self];
 }
 
 @end
