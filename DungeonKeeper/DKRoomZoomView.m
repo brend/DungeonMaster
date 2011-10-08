@@ -316,7 +316,9 @@
 	
 	if ([characters length] == 1 && ![theEvent isARepeat])
 	{
-		const NSInteger ESCAPE_KEY_CODE = 27;
+		const NSInteger 
+			ESCAPE_KEY_CODE = 27,
+			BACKSPACE_KEY_CODE = 127;
 		
 		unichar character = [characters characterAtIndex:0];
 		switch (character) {
@@ -335,8 +337,11 @@
 			case 'a':
 				[self connectAll];
 				break;
-			case NSBackspaceCharacter:
+			case BACKSPACE_KEY_CODE:
 				[self clearConnections];
+				break;
+			case '\r':
+				[self switchToMap];
 				break;
 			case ESCAPE_KEY_CODE:
 				[self cancelConnection];
