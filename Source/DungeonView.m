@@ -38,7 +38,8 @@
 	background = [[NSImage alloc] initWithContentsOfFile: [map image]];
 	caretSize = NSMakeSize([background size].width / [map width], [background size].height / [map height]);
 	
-	// Redraw
+	// Resize and redraw
+	[self setFrameSize: background.size];
 	[self setNeedsDisplay: YES];
 }
 
