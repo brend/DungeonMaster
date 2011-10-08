@@ -41,6 +41,8 @@
 
 - (void) exitHasBeenSelected: (DMExit) e;
 - (void) clearConnections;
+- (void) connectAll;
+- (void) cancelConnection;
 
 - (void) switchToMap;
 

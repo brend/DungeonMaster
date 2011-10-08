@@ -310,10 +310,40 @@
 
 - (void) keyDown:(NSEvent *)theEvent
 {
-	if (theEvent.keyCode == 36) {
-		[self switchToMap];
-	} else {
-		[self interpretKeyEvents: [NSArray arrayWithObject: theEvent]];
+	// Thanks to Matt Gallagher of "Cocoa With Love"
+	// for the key handling code
+	NSString *characters = [theEvent characters];
+	
+	if ([characters length] == 1 && ![theEvent isARepeat])
+	{
+		const NSInteger ESCAPE_KEY_CODE = 27;
+		
+		unichar character = [characters characterAtIndex:0];
+		switch (character) {
+			case NSLeftArrowFunctionKey:
+				[self moveLeft: self];
+				break;
+			case NSRightArrowFunctionKey:
+				[self moveRight: self];
+				break;
+			case NSUpArrowFunctionKey:
+				[self moveUp: self];
+				break;
+			case NSDownArrowFunctionKey:
+				[self moveDown: self];
+				break;
+			case 'a':
+				[self connectAll];
+				break;
+			case NSBackspaceCharacter:
+				[self clearConnections];
+				break;
+			case ESCAPE_KEY_CODE:
+				[self cancelConnection];
+				break;
+			default:
+				break;
+		}
 	}
 }
 
@@ -348,6 +378,22 @@
 - (void) clearConnections
 {
 	[delegate roomZoomClearConnections: self];
+}
+
+- (void) connectAll
+{
+	for (NSInteger i = 0; i < 4; ++i) {
+		for (NSInteger j = i + 1; j < 4; ++j) {
+			if (i != j)
+				[delegate roomZoom: self toggleConnectionFromExit: (1 << i) toExit: (1 << j) bidirectional: YES];
+		}
+	}
+}
+
+- (void) cancelConnection
+{
+	connectionStart = connectionEnd = DMExitNone;
+	[self setNeedsDisplay: YES];
 }
 
 #pragma mark -
