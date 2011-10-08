@@ -53,6 +53,11 @@
 	}
 	
 	self.maps = mapCollection;
+	
+	// Display the first map
+	if (files.count > 0) {
+		[self setSelectedMap: [files objectAtIndex: 0]];
+	}
 }
 
 - (void) dealloc
