@@ -91,3 +91,19 @@ inline CGFloat DMPointDistance(NSPoint p, NSPoint q)
 	
 	return sqrtf(dx * dx + dy * dy);
 }
+
+inline DMExit DMEntrancesForExit(DMConnections c, DMExit exit)
+{
+	switch (exit) {
+		case DMExitNorth:
+			return c.north;
+		case DMExitEast:
+			return c.east;
+		case DMExitSouth:
+			return c.south;
+		case DMExitWest:
+			return c.west;
+		default:
+			@throw [NSException exceptionWithName: @"Invalid exit" reason: [NSString stringWithFormat: @"Not a valid singular exit: %d", exit] userInfo: nil];
+	}
+}

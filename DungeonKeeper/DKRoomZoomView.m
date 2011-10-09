@@ -239,6 +239,7 @@
 - (void)flagsChanged:(NSEvent *)theEvent
 {
 	isShiftPressed = (theEvent.modifierFlags & NSShiftKeyMask) > 0;
+	isControlPressed = (theEvent.modifierFlags & NSControlKeyMask) > 0;
 }
 
 - (DMExit) connectionPointFromPoint:(NSPoint)p
@@ -365,8 +366,14 @@
 - (void) exitHasBeenSelected: (DMExit) selectedExit
 {
 	if (connectionStart == DMExitNone) {
-		connectionStart = selectedExit;
-		connectionEnd = DMExitNone;
+		// If Ctrl is pressed, clear the exit;
+		// otherwise begin making a connection
+		if (isControlPressed) {
+			[self clearExit: selectedExit];
+		} else {
+			connectionStart = selectedExit;
+			connectionEnd = DMExitNone;
+		}
 	} else {
 		connectionEnd = selectedExit;
 		
@@ -398,6 +405,22 @@
 - (void) cancelConnection
 {
 	connectionStart = connectionEnd = DMExitNone;
+	[self setNeedsDisplay: YES];
+}
+
+- (void) clearExit:(DMExit)exit
+{
+	for (NSInteger i = 0; i < 4; ++i) {
+		DMExit entrance = 1 << i;
+		
+		// Clear all set connections
+		if (DMEntrancesForExit(connections, exit) & entrance) {
+			[delegate roomZoom: self toggleConnectionFromExit: exit
+						toExit: entrance
+				 bidirectional: YES];
+		}
+	}
+	
 	[self setNeedsDisplay: YES];
 }
 

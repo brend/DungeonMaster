@@ -25,7 +25,7 @@
 	DMExit connectionStart, connectionEnd;
 	
 	NSPoint currentMousePosition;
-	BOOL isShiftPressed;
+	BOOL isShiftPressed, isControlPressed;
 	
 	IBOutlet id<DKRoomZoomViewDelegate> delegate;
 	IBOutlet NSWindow *mapWindow;
@@ -41,6 +41,7 @@
 
 - (void) exitHasBeenSelected: (DMExit) e;
 - (void) clearConnections;
+- (void) clearExit: (DMExit) exit;
 - (void) connectAll;
 - (void) cancelConnection;
 
